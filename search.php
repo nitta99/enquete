@@ -39,6 +39,12 @@
 		<td><button type="submit">検索</button></td>
 	</tr>
 </table>
+<table>
+    <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
+    <?php foreach ($data as $row): ?>
+        <tr><td><?php echo $row[0]?></td><td><?php echo $row[1]?></td><td><?php echo $row[2]?></td><td><?php echo $row[3]?></td><td><?php echo $row[4]?></td><td><?php echo $row[5]?></td><td><?php echo $row[6]?></td></tr>
+    <?php endforeach; ?>
+</table>
 </form>
 </body>
 </html>
@@ -54,18 +60,3 @@ while($data = fgetcsv($f)){
 // test.csvを閉じます。
 fclose($f);
 ?>
-
-<html>
-    <body>
-        <table>
-            <thead>
-                <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
-            </thead>
-                <tbody>
-                <?php foreach ($data as $row): ?>
-                    <tr><td><?php echo $row[0]?></td><td><?php echo $row[1]?></td><td><?php echo $row[2]?></td><td><?php echo $row[3]?></td><td><?php echo $row[4]?></td><td><?php echo $row[5]?></td><td><?php echo $row[6]?></td></tr>
-                <?php endforeach; ?>
-                </tbody>
-        </table>
-    </body>
-</html>
