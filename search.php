@@ -41,9 +41,17 @@
 </table>
 <table>
     <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
-    <?php foreach ($data as $row): ?>
-        <tr><td><?php echo $row[0]?></td><td><?php echo $row[1]?></td><td><?php echo $row[2]?></td><td><?php echo $row[3]?></td><td><?php echo $row[4]?></td><td><?php echo $row[5]?></td><td><?php echo $row[6]?></td></tr>
-    <?php endforeach; ?>
+<?php
+// 読み取り専用でtest.csvを開きます。
+$f = fopen("./test.csv", "r");
+// test.csvの行を1行ずつ読み込みます。
+while($data = fgetcsv($f)){
+    // 読み込んだ結果を表示します。
+    var_dump($data);
+}
+// test.csvを閉じます。
+fclose($f);
+?>
 </table>
 </form>
 </body>
