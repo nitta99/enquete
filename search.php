@@ -43,18 +43,41 @@
     <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
 </table>
 <?php
-$row = 1;
-// ファイルが存在しているかチェックする
-if (($handle = fopen("data.csv", "r")) !== FALSE) {
-    // 1行ずつfgetcsv()関数を使って読み込む
-    while (($data = fgetcsv($handle))) {
-        $row++;
-        foreach ($data as $value) {
-            echo "「${value}」\n";
-        }
-    }
-    fclose($handle);
+// test.csvファイルを開いて、読み込みモードに設定する
+$fp = fopen('data.csv', 'r');
+
+// テーブルタグを作成し、テーブルヘッダーで見出しを作る
+echo '<table border="1">
+    <tr>
+    <th>氏名</th>
+    <th>年齢</th>
+    <th>性別</th>
+    <th>住所</th>
+    <th>電話番号</th>
+    <th>メールアドレス</th>
+    <th>感想</th>
+    </tr>';
+
+// while文でCSVファイルのデータを1つずつ繰り返し読み込む
+while($data = fgetcsv($fp)){
+
+    // テーブルセルに配列の値を格納
+    echo '<tr>';
+    echo '<td>'.$data[0].'</td>';
+    echo '<td>'.$data[1].'</td>';
+    echo '<td>'.$data[2].'</td>';
+    echo '<td>'.$data[3].'</td>';
+    echo '<td>'.$data[4].'</td>';
+    echo '<td>'.$data[5].'</td>';
+    echo '<td>'.$data[6].'</td>';
+    echo '</tr>';
 }
+
+// テーブルの閉じタグ
+echo '</table>';
+
+// 開いたファイルを閉じる
+fclose($fp);
 ?>
 </form>
 </body>
