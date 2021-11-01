@@ -1,15 +1,4 @@
 <!doctype html>
-<?php
-// 読み取り専用でtest.csvを開きます。
-$f = fopen("data.csv", "r");
-// test.csvの行を1行ずつ読み込みます。
-while($data = fgetcsv($f)){
-    // 読み込んだ結果を表示します。
-    var_dump($data);
-}
-// test.csvを閉じます。
-fclose($f);
-?>
 <html>
 <head>
 <meta charset="utf-8">
