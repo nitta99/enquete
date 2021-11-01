@@ -1,4 +1,15 @@
 <!doctype html>
+<?php
+// 読み取り専用でtest.csvを開きます。
+$f = fopen("data.csv", "r");
+// test.csvの行を1行ずつ読み込みます。
+while($data = fgetcsv($f)){
+    // 読み込んだ結果を表示します。
+    var_dump($data);
+}
+// test.csvを閉じます。
+fclose($f);
+?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -39,17 +50,6 @@
 		<td><button type="submit">検索</button></td>
 	</tr>
 </table>
-<?php
-// 読み取り専用でtest.csvを開きます。
-$f = fopen("data.csv", "r");
-// test.csvの行を1行ずつ読み込みます。
-while($data = fgetcsv($f)){
-    // 読み込んだ結果を表示します。
-    var_dump($data);
-}
-// test.csvを閉じます。
-fclose($f);
-?>
 <table>
     <thead>
 		<tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
