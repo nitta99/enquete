@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>アンケート 画面</title>
+<title>アンケート</title>
 
 <script type="text/javascript">
 
