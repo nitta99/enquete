@@ -43,11 +43,11 @@
     <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
 <?php
 // 読み取り専用でtest.csvを開きます。
-$fp = fopen("./data.csv", "r");
+$fp = fopen("data.csv", "r");
 // test.csvの行を1行ずつ読み込みます。
 while($data = fgetcsv($fp)){
     // 読み込んだ結果を表示します。
-    var_dump($data);
+    echo $data;
 }
 // test.csvを閉じます。
 fclose($fp);
