@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>検索</title>
+<title>検索画面</title>
 </head>
 <body>
 <form action="search.php" method="post" name='enquete'>
@@ -39,7 +39,6 @@
 		<td><button type="submit">検索</button></td>
 	</tr>
 </table>
-</form>
 <?php
 // 読み取り専用でtest.csvを開きます。
 $f = fopen("data.csv", "r");
@@ -61,5 +60,6 @@ fclose($f);
             <?php endforeach; ?>
     </tbody>
 </table>
+</form>
 </body>
 </html>
