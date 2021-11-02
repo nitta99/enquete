@@ -40,13 +40,13 @@
 // 書き込み対象のCSVファイルを開く
 $fp = fopen("data.csv", "w");
 
-$NAME = mb_convert_encoding($_POST['name'], "UTF-8");
-$AGE = mb_convert_encoding($_POST['age'], "UTF-8");
-$GENDER = mb_convert_encoding($_POST['gender'], "UTF-8");
-$ADDRESS = mb_convert_encoding($_POST['address'], "UTF-8");
-$TELEPHONE = mb_convert_encoding($_POST['telephone'], "UTF-8");
-$MAIL = mb_convert_encoding($_POST['mail'], "UTF-8");
-$THOUGHTS = mb_convert_encoding($_POST['thoughts'], "UTF-8");
+$NAME = mb_convert_encoding($_POST['name'], "UTF-8", "sjis-win");
+$AGE = mb_convert_encoding($_POST['age'], "UTF-8", "sjis-win");
+$GENDER = mb_convert_encoding($_POST['gender'], "UTF-8", "sjis-win");
+$ADDRESS = mb_convert_encoding($_POST['address'], "UTF-8", "sjis-win");
+$TELEPHONE = mb_convert_encoding($_POST['telephone'], "UTF-8", "sjis-win");
+$MAIL = mb_convert_encoding($_POST['mail'], "UTF-8", "sjis-win");
+$THOUGHTS = mb_convert_encoding($_POST['thoughts'], "UTF-8", "sjis-win");
 
 // CSVファイルに書き込む
 fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
