@@ -60,7 +60,7 @@ echo '<table border="1">
 
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
-    $data = mb_convert_encoding($data, 'UTF-8', 'sjis-win');
+
     // テーブルセルに配列の値を格納
     echo '<tr>';
     echo '<td>'.$data[0].'</td>';
