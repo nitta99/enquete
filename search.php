@@ -41,9 +41,6 @@
 </table>
 
 <?php
-// // test.csvファイルを開いて、読み込みモードに設定する
-// $fp = fopen('data.csv', 'r');
-
 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
 echo '<table border="1">
     <tr>
@@ -55,39 +52,22 @@ echo '<table border="1">
     <th>メールアドレス</th>
     <th>感想</th>
     </tr>';
-//ファイル読み込み
-$sjis_data = file_get_contents('data.csv');
-//文字コード変換
-$sjis_data = mb_convert_encoding($sjis_data, 'UTF-8', 'SJIS-win');
-//一時ファイル作成
-$fp = tmpfile();
-//メタデータからファイルパスを取得して読み込み
-$meta = stream_get_meta_data($fp);
-//一時ファイル書き込み
-fwrite($fp, $sjis_data);
-//ファイルポインタを先頭に
-rewind($fp);
+// test.csvファイルを開いて、読み込みモードに設定する
+$fp = fopen('data.csv', 'r');
 
-// // data.csv（SJIS）を読み込む
-// $sjis_data = file_get_contents('data.csv');
-// // 一時ファイル作成
-// $fp = tmpfile();
-// // UTF-8に変換して一時ファイルに書き込み
-// fwrite($fp, mb_convert_encoding($sjis_data, 'UTF-8', 'SJIS-win'));
-// // ポインタを先頭に
-// fseek($fp, 0);
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
+    $enc_data = mb_convert_encoding($data, "UTF-8", "SJIS-win");
 
     // テーブルセルに配列の値を格納
     echo '<tr>';
-    echo '<td>'.$data[0].'</td>';
-    echo '<td>'.$data[1].'</td>';
-    echo '<td>'.$data[2].'</td>';
-    echo '<td>'.$data[3].'</td>';
-    echo '<td>'.$data[4].'</td>';
-    echo '<td>'.$data[5].'</td>';
-    echo '<td>'.$data[6].'</td>';
+    echo '<td>'.$enc_data[0].'</td>';
+    echo '<td>'.$enc_data[1].'</td>';
+    echo '<td>'.$enc_data[2].'</td>';
+    echo '<td>'.$enc_data[3].'</td>';
+    echo '<td>'.$enc_data[4].'</td>';
+    echo '<td>'.$enc_data[5].'</td>';
+    echo '<td>'.$enc_data[6].'</td>';
     echo '</tr>';
 }
 
