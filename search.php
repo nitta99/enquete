@@ -39,9 +39,7 @@
 		<td><button type="submit">検索</button></td>
 	</tr>
 </table>
-<table>
-    <tr><th>氏名</th><th>年齢</th><th>性別</th><th>住所</th><th>電話番号</th><th>メールアドレス</th><th>感想</th></tr>
-</table>
+
 <?php
 // test.csvファイルを開いて、読み込みモードに設定する
 $fp = fopen('data.csv', 'r');
@@ -61,7 +59,7 @@ echo '<table border="1">
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
 
-    mb_convert_variables("UTF-8", "SJIS", $data);
+    mb_convert_variables("UTF-8", "SJIS-win", $data);
     // テーブルセルに配列の値を格納
     echo '<tr>';
     echo '<td>'.$data[0].'</td>';
