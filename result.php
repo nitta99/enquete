@@ -38,7 +38,7 @@
 <?php
 
 // 書き込み対象のCSVファイルを開く
-$fp = fopen("C:\\Users\\r.nitta\\develop\\enquete\\data.csv", "a");
+$fp = fopen("data.csv", "a");
 
 $NAME = $_POST['name'];
 $AGE = $_POST['age'];
