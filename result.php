@@ -40,13 +40,22 @@
 // 書き込み対象のCSVファイルを開く
 $fp = fopen("data.csv", "a");
 
-$NAME = mb_convert_encoding($_POST['name'], "UTF-8");
-$AGE = mb_convert_encoding($_POST['age'], "UTF-8");
-$GENDER = mb_convert_encoding($_POST['gender'], "UTF-8");
-$ADDRESS = mb_convert_encoding($_POST['address'], "UTF-8");
-$TELEPHONE = mb_convert_encoding($_POST['telephone'], "UTF-8");
-$MAIL = mb_convert_encoding($_POST['mail'], "UTF-8");
-$THOUGHTS = mb_convert_encoding($_POST['thoughts'], "UTF-8");
+$NAME = $_POST['name'];
+$AGE = $_POST['age'];
+$GENDER = $_POST['gender'];
+$ADDRESS = $_POST['address'];
+$TELEPHONE = $_POST['telephone'];
+$MAIL = $_POST['mail'];
+$THOUGHTS = $_POST['thoughts'];
+
+$NAME = mb_convert_encoding($NAME, "UTF-8", 'SJIS-win');
+$AGE = mb_convert_encoding($AGE, "UTF-8", 'SJIS-win');
+$GENDER = mb_convert_encoding($GENDER, "UTF-8", 'SJIS-win');
+$ADDRESS = mb_convert_encoding($ADDRESS, "UTF-8", 'SJIS-win');
+$TELEPHONE = mb_convert_encoding($TELEPHONE, "UTF-8", 'SJIS-win');
+$MAIL = mb_convert_encoding($MAIL, "UTF-8", 'SJIS-win');
+$THOUGHTS = mb_convert_encoding($THOUGHTS, "UTF-8", 'SJIS-win');
+
 
 // //ストリームフィルタ指定
 // stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
