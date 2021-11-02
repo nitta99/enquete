@@ -38,7 +38,7 @@
 <?php
 
 // 書き込み対象のCSVファイルを開く
-$fp = fopen("data.csv", "a");
+$fp = fopen("data.csv", "w");
 
 $NAME = mb_convert_encoding($_POST['name'], "UTF-8");
 $AGE = mb_convert_encoding($_POST['age'], "UTF-8");
