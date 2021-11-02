@@ -53,12 +53,13 @@ echo '<table border="1">
     <th>感想</th>
     </tr>';
 // test.csvファイルを開いて、読み込みモードに設定する
-$fp = file_get_contents('data.csv');
+$fp = fopen('data.csv', 'r');
 
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
-    $enc_data = mb_convert_encoding($data,"utf-8","sjis-win");
-
+    var_dump($data);
+    $data = mb_convert_encoding($data, 'UTF-8', 'SJIS-win');
+    var_dump($data);
     // テーブルセルに配列の値を格納
     echo '<tr>';
     echo '<td>'.$data[0].'</td>';
