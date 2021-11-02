@@ -52,9 +52,7 @@ echo '<table border="1">
     <th>メールアドレス</th>
     <th>感想</th>
     </tr>';
-    // test.csvファイルを開いて、読み込みモードに設定する
-$fp = fopen('data.csv', 'r');
-// data.csv（SJIS）を読み込む
+    // data.csv（SJIS）を読み込む
 $sjis_data = file_get_contents('data.csv');
 // 一時ファイル作成
 $fp = tmpfile();
