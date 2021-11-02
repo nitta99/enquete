@@ -41,7 +41,7 @@
 </table>
 
 <?php
-header("Content-Type: text/html;charset=Shift_JIS");
+header("Content-Type: text/html;charset=UTF-8");
 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
 echo '<table border="1">
     <tr>
