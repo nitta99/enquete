@@ -39,9 +39,9 @@
 		<td><button type="submit">検索</button></td>
 	</tr>
 </table>
-
+<table>
 <?php
-header("Content-Type: text/html;charset=UTF-8");
+header("Content-Type: text/html;charset=Shift_JIS");
 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
 echo '<table border="1">
     <tr>
@@ -77,6 +77,7 @@ echo '</table>';
 // 開いたファイルを閉じる
 fclose($fp);
 ?>
+</table>
 </form>
 </body>
 </html>
