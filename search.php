@@ -41,7 +41,6 @@
 </table>
 <table>
 <?php
-header('Content-Type: text/html; charset=UTF-8');
 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
 echo '<table border="1">
     <tr>
@@ -58,16 +57,16 @@ $fp = fopen('data.csv', 'r');
 
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
-
+    $enc_data = mb_convert_encoding($data, "UTF-8", "sjis-win");
     // テーブルセルに配列の値を格納
     echo '<tr>';
-    echo '<td>'.$data[0].'</td>';
-    echo '<td>'.$data[1].'</td>';
-    echo '<td>'.$data[2].'</td>';
-    echo '<td>'.$data[3].'</td>';
-    echo '<td>'.$data[4].'</td>';
-    echo '<td>'.$data[5].'</td>';
-    echo '<td>'.$data[6].'</td>';
+    echo '<td>'.$enc_data[0].'</td>';
+    echo '<td>'.$enc_data[1].'</td>';
+    echo '<td>'.$enc_data[2].'</td>';
+    echo '<td>'.$enc_data[3].'</td>';
+    echo '<td>'.$enc_data[4].'</td>';
+    echo '<td>'.$enc_data[5].'</td>';
+    echo '<td>'.$enc_data[6].'</td>';
     echo '</tr>';
 }
 
