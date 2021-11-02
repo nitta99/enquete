@@ -58,6 +58,9 @@ echo '<table border="1">
     <th>感想</th>
     </tr>';
 
+//ストリームフィルタ指定
+stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
+
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
 
