@@ -38,7 +38,7 @@
 <?php
 
 // 書き込み対象のCSVファイルを開く
-$fp = fopen("data.csv", "w");
+$fp = fopen("c:\\Users\\r.nitta\\develop\\enquete\\data.csv", "a");
 
 $NAME = $_POST['name'];
 $AGE = $_POST['age'];
@@ -52,7 +52,7 @@ $THOUGHTS = $_POST['thoughts'];
 stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
 
 // CSVファイルに書き込む
-fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS");
+fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
 
 // 書き込み対象のファイルをクローズ
 fclose($fp);
