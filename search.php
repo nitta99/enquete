@@ -73,6 +73,7 @@
                 </tr>
             </table>
         </form>
+    </div>
             <table>
                 <?php
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
@@ -110,6 +111,5 @@
                 fclose($fp);
                 ?>
             </table>
-    </div>
 </body>
 </html>
