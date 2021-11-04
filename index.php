@@ -120,7 +120,7 @@ function checkTelephone(){
                     </td>
                 </tr>
                 <tr>
-                    <td><button class="contact-submit" type="submit">登録</button></td>
+                    <td><input class="contact-submit" type="submit" />登録</td>
                 </tr>
             </table>
         </form>
