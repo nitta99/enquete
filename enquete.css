@@ -11,11 +11,6 @@ body {
     margin: 0 auto;/*中央寄せ*/
     padding: 60px 0;
 }
-.contact-search {
-    width: 200px;/*横幅*/
-    margin: 0 auto;/*中央寄せ*/
-    padding: 60px 0;
-}
 .contact-ttl{
     font-size: 40px;
     font-weight: bold;

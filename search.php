@@ -6,7 +6,7 @@
 <title>検索画面</title>
 </head>
 <body>
-    <div class ="contact-search">
+    <div class ="contact">
     <h1 class="contact-ttl">検索</h1>
         <form action="search.php" method="post">
             <table class="contact-table">
