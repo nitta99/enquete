@@ -69,9 +69,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="button_wrapper">
-                        <button class="contact-submit" type="submit">検索</button>
-                    </td>
+                    <td><button class="contact-submit" type="submit">検索</button></td>
                 </tr>
             </table>
             <table>
