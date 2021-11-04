@@ -69,9 +69,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input class="contact-submit" type="submit" />検索</td>
+                    <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
+        </form>
             <table>
                 <?php
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
@@ -109,7 +110,6 @@
                 fclose($fp);
                 ?>
             </table>
-        </form>
     </div>
 </body>
 </html>
