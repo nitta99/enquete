@@ -37,12 +37,30 @@ function checkNumber(){
        return true; // 送信を実行
     }
 }
+
+function checkTelephone(){
+	var flag = 0;
+	// 設定開始（必須にする項目を設定してください）
+	if(document.enquete.name.value == ""){ // 「お名前」の入力をチェック
+		flag = 1;
+	}　else if (document.enquete.age.value.match(/[^0-9]+/)){
+        flag = 1;
+    }
+	// 設定終了
+	if(flag){
+		window.alert('電話番号は必須かつ数字で入力してください'); // 入力漏れがあれば警告ダイアログを表示
+		return false; // 送信を中止
+	}
+	else{
+		return true; // 送信を実行
+	}
+}
 </script>
 </head>
 <body>
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
-        <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber())">
+        <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber() && checkTelephone())">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
