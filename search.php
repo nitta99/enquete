@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class ="contact">
-    <h1 class="contact-ttl">アンケート</h1>
+    <h1 class="contact-ttl">検索</h1>
         <form action="search.php" method="post" name='enquete'>
             <table class="contact-table">
             <tr>
