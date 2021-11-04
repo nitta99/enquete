@@ -93,7 +93,15 @@
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
                 while($data = fgetcsv($fp)){
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
-                    if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
+
+                    if($data[0]==="" && $data[1]==="" && $data[2]==="" && $data[3]===""
+                    && $data[4]==="" && $data[5]==="" && $data[6]===""){
+                        echo '<tr>';
+                    for ($i=0;$i<count($data);$i++) {
+                        echo "<td>" . $data[$i] . "</td>";
+                    }
+                    echo '</tr>';
+                    } else if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
                     || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
                     // テーブルセルに配列の値を格納
                     echo '<tr>';
