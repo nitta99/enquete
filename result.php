@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class ="contact">
-        <h1 class="contact-ttl">アンケート</h1>
+        <h1 class="contact-ttl">登録内容</h1>
         <table class="contact-table">
             <tr>
                 <th class="contact-item">名前</th>
