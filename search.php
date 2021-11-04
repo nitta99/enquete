@@ -57,7 +57,7 @@ $fp = fopen('data.csv', 'r');
 
 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
 while($data = fgetcsv($fp)){
-
+    mb_convert_variables("UTF-8", "SJIS-win", $data);
     // テーブルセルに配列の値を格納
     echo '<tr>';
     echo '<td>'.$data[0].'</td>';
