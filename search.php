@@ -10,7 +10,7 @@
     <h1 class="contact-ttl">検索</h1>
         <form action="search.php" method="post">
             <table class="contact-table">
-            <tr>
+                <tr>
                     <th class="contact-item">名前</th>
                     <td class="contact-body">
                         <input type="text" name="name" class="form-text" value="">
@@ -26,6 +26,8 @@
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
                         <select name="gender" class="form-select">
+                            <option hidden>選択してください</option>
+                            
                             <option>男性</option>
                             <option>女性</option>
                         </select>
