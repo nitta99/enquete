@@ -39,40 +39,71 @@ function checkNumber(){
 </script>
 </head>
 <body>
-<form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber())">
-<table>
-    <tr>
-        <td>氏名</td>
-        <td><input type="text" name="name" value=""></td>
-    </tr>
-    <tr>
-        <td>年齢</td>
-        <td><input type="text" name="age" value="">歳</td>
-    </tr>
-    <tr>
-        <td>性別</td>
-        <td><select name="gender"><option selected="selected">男性</option><option>女性</option></select></td>
-    </tr>
-    <tr>
-        <td>住所</td>
-        <td><input type="text" name="address" value=""></td>
-    </tr>
-    <tr>
-        <td>電話番号</td>
-        <td><input type="text" name="telephone" value=""></td>
-    </tr>
-    <tr>
-        <td>メールアドレス</td>
-        <td><input type="text" name="mail" value=""></td>
-    </tr>
-    <tr>
-        <td>感想</td>
-        <td><input type="radio" name="thoughts" value="good">良い<input type="radio" name="thoughts" value="normal">普通<input type="radio" name="thoughts" value="bad">悪い</td>
-    </tr>
-	<tr>
-		<td><button type="submit">登録</button></td>
-	</tr>
-</table>
-</form>
+    <div class ="contact">
+    <h1 class="contact-ttl">アンケート</h1>
+        <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber())">
+            <table class="contact-table">
+                <tr>
+                    <th class="contact-item">名前</th>
+                    <td class="contact-body">
+                        <input type="text" name="name" class="form-text" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">年齢</th>
+                    <td class="contact-body">
+                        <input type="text" name="age" class="form-text" value="">歳
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">性別</th>
+                    <td class="contact-body">
+                        <select name="gender" class="form-select">
+                            <option selected="selected">男性</option>
+                            <option>女性</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">住所</th>
+                    <td class="contact-body">
+                        <input type="text" name="address" class="form-text" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">電話番号</th>
+                    <td class="contact-body">
+                        <input type="text" name="telephone" class="form-text" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">メ―ルアドレス</th>
+                    <td class="contact-body">
+                        <input type="text" name="mail" class="form-text" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">感想</th>
+                    <td class="contact-body">
+                    <label class="contact-thoughts">
+                        <input type="radio" name="thoughts" value="good" />
+                        <span class="contact-thoughts-txt">良い</span>
+                    </label>
+                    <label class="contact-thoughts">
+                        <input type="radio" name="thoughts" value="normal" />
+                        <span class="contact-thoughts-txt">普通</span>
+                    </label>
+                    <label class="contact-thoughts">
+                        <input type="radio" name="thoughts" value="bad" />
+                        <span class="contact-thoughts-txt">悪い</span>
+                    </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button class="contact-submit" type="submit">登録</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>
