@@ -72,7 +72,7 @@ function checkTelephone(){
                 <tr>
                     <th class="contact-item">年齢</th>
                     <td class="contact-body">
-                        <input type="text" name="age" class="form-text" value="">歳
+                        <input type="text" name="age" class="form-age-text" value="">歳
                     </td>
                 </tr>
                 <tr>

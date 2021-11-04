@@ -46,6 +46,16 @@ body {
     -moz-appearance: none;
     max-width: 400px;
 }
+.form-age-text {
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
 .contact-thoughts + .contact-thoughts {
     margin-left: 10px;
 }
