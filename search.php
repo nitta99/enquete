@@ -8,7 +8,7 @@
 <body>
     <div class ="contact">
     <h1 class="contact-ttl">検索</h1>
-        <form action="search.php" method="post" name='enquete'>
+        <form action="search.php" method="post">
             <table class="contact-table">
             <tr>
                     <th class="contact-item">名前</th>
@@ -89,16 +89,15 @@
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
                 while($data = fgetcsv($fp)){
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
+                    if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
+                    || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
                     // テーブルセルに配列の値を格納
                     echo '<tr>';
-                    echo '<td>'.$data[0].'</td>';
-                    echo '<td>'.$data[1].'</td>';
-                    echo '<td>'.$data[2].'</td>';
-                    echo '<td>'.$data[3].'</td>';
-                    echo '<td>'.$data[4].'</td>';
-                    echo '<td>'.$data[5].'</td>';
-                    echo '<td>'.$data[6].'</td>';
+                    for ($i=0;$i<count($data);$i++) {
+                        echo "<td>" . $data[$i] . "</td>";
+                    }
                     echo '</tr>';
+                    }
                 }
 
                 // テーブルの閉じタグ
