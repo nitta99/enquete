@@ -2,39 +2,56 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="enquete.css" media="all" />
 <title>結果表示画面</title>
 </head>
 <body>
-<table>
-    <tr>
-        <td>氏名</td>
-        <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
-    </tr>
-    <tr>
-        <td>年齢</td>
-        <td><?php echo (int)@$_POST['age']; ?>歳</td>
-    </tr>
-    <tr>
-        <td>性別</td>
-        <td><?php echo htmlspecialchars(@$_POST['gender'], ENT_QUOTES, 'UTF-8');?></td>
-    </tr>
-    <tr>
-        <td>住所</td>
-        <td><?php echo htmlspecialchars(@$_POST['address'], ENT_QUOTES, 'UTF-8'); ?></td>
-    </tr>
-    <tr>
-        <td>電話番号</td>
-        <td><?php echo htmlspecialchars(@$_POST['telephone'], ENT_QUOTES, 'UTF-8'); ?></td>
-    </tr>
-    <tr>
-        <td>メールアドレス</td>
-        <td><?php echo htmlspecialchars(@$_POST['mail'], ENT_QUOTES, 'UTF-8'); ?></td>
-    </tr>
-    <tr>
-        <td>感想</td>
-        <td><?php echo htmlspecialchars(@$_POST['thoughts'], ENT_QUOTES, 'UTF-8');?></td>
-    </tr>
-</table>
+    <div class ="contact">
+        <h1 class="contact-ttl">アンケート</h1>
+        <table class="contact-table">
+            <tr>
+                <th class="contact-item">名前</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?>
+                </td>
+            </tr>
+            <tr>
+                <th class="contact-item">年齢</th>
+                <td class="contact-body">
+                    <?php echo (int)@$_POST['age']; ?>歳
+                </td>
+            </tr>
+            <tr>
+                <th class="contact-item">性別</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['gender'], ENT_QUOTES, 'UTF-8');?>
+            </td>
+            </tr>
+            <tr>
+                <th class="contact-item">住所</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['address'], ENT_QUOTES, 'UTF-8'); ?>
+            </td>
+            </tr>
+            <tr>
+                <th class="contact-item">電話番号</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['telephone'], ENT_QUOTES, 'UTF-8'); ?>
+            </td>
+            </tr>
+            <tr>
+                <th class="contact-item">メ―ルアドレス</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['mail'], ENT_QUOTES, 'UTF-8'); ?>
+            </td>
+            </tr>
+            <tr>
+                <th class="contact-item">感想</th>
+                <td class="contact-body">
+                    <?php echo htmlspecialchars(@$_POST['thoughts'], ENT_QUOTES, 'UTF-8');?>
+                </td>
+            </tr>
+        </table>
 <?php
 
 // 書き込み対象のCSVファイルを開く
@@ -57,5 +74,6 @@ fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
 // 書き込み対象のファイルをクローズ
 fclose($fp);
 ?>
+    </div>
 </body>
 </html>
