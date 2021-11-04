@@ -27,7 +27,7 @@
                     <td class="contact-body">
                         <select name="gender" class="form-select">
                             <option hidden>選択してください</option>
-                            
+
                             <option>男性</option>
                             <option>女性</option>
                         </select>
@@ -69,7 +69,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><button class="contact-submit" type="submit">検索</button></td>
+                    <td class="button_wrapper">
+                        <button class="contact-submit" type="submit">検索</button>
+                    </td>
                 </tr>
             </table>
             <table>

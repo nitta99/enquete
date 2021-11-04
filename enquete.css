@@ -70,6 +70,9 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.button_wrapper{
+    text-align:center;
+}
 .contact-submit {
     width: 250px;
     background-color: #333;
@@ -85,5 +88,4 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
-    text-align: center;
 }
