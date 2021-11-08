@@ -86,26 +86,22 @@ body {
     -moz-appearance: none;
     cursor: pointer;
 }
-table, th, td {
+.result {
     border-collapse: collapse;
     border: 1px solid #ccc;
     line-height: 1.5;
 }
-
-.type06 th {
-    width: 50px;
+.result th {
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
-    background: #3f3f3f;
+    background: #0099e3;
     color: #ffffff;
 }
-.type06 td {
-    width: 100px;
+.result td {
     padding: 10px;
     vertical-align: top;
 }
-
-tr:nth-child(even) {
-    background: #d9d9d9;
+.result tr:nth-child(even) {
+    background: #cee7ff;
 }

@@ -72,7 +72,7 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
-            <table class="type06">
+            <table class="result">
                 <tr>
                     <th>氏名</th>
                     <th>年齢</th>
