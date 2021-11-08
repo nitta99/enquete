@@ -72,6 +72,32 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
+            <?php
+                // test.csvファイルを開いて、読み込みモードに設定する
+                $fp = fopen('data.csv', 'r');
+                // while文でCSVファイルのデータを1つずつ繰り返し読み込む
+                while($data = fgetcsv($fp)){
+                    mb_convert_variables("UTF-8", "SJIS-win", $data);
+
+                    if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
+                    || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
+                    // テーブルセルに配列の値を格納
+                    for ($i=0;$i<count($data);$i++) {
+                        $data = $data[$i];
+                    }
+                    }else if (isset($_POST["name"], $_POST["age"], $_POST["gender"],
+                    $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"])) {
+                        if(empty($_POST['name'] && $_POST['age'] && $_POST['gender'] &&
+                        $_POST['address'] && $_POST['telephone'] && $_POST['mail'] && $_POST['thoughts'])){
+                            for ($i=0;$i<count($data);$i++) {
+                            $data = $data[$i];
+                            }
+                        }
+                    }
+                }
+                // 開いたファイルを閉じる
+                fclose($fp);
+                ?>
             <table>
                 <tr>
                     <th>氏名</th>
@@ -82,36 +108,9 @@
                     <th>メールアドレス</th>
                     <th>感想</th>
                 </tr>
-                <?php
-                // test.csvファイルを開いて、読み込みモードに設定する
-                $fp = fopen('data.csv', 'r');
-                // while文でCSVファイルのデータを1つずつ繰り返し読み込む
-                while($data = fgetcsv($fp)){
-                    mb_convert_variables("UTF-8", "SJIS-win", $data);
-
-                    if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
-                    || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
-                    // テーブルセルに配列の値を格納
-                    echo '<tr>';
-                    for ($i=0;$i<count($data);$i++) {
-                        echo "<td>" . $data[$i] . "</td>";
-                    }
-                    echo '</tr>';
-                    }else if (isset($_POST["name"], $_POST["age"], $_POST["gender"],
-                    $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"])) {
-                        if(empty($_POST['name'] && $_POST['age'] && $_POST['gender'] &&
-                        $_POST['address'] && $_POST['telephone'] && $_POST['mail'] && $_POST['thoughts'])){
-                            echo '<tr>';
-                            for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                            }
-                            echo '</tr>';
-                        }
-                    }
-                }
-                // 開いたファイルを閉じる
-                fclose($fp);
-                ?>
+                <?php foreach ($data as $row): ?>
+                <tr><td><?php echo $row[0]?></td><td><?php echo $row[1]?></td><td><?php echo $row[2]?></td><td><?php echo $row[3]?></td><td><?php echo $row[4]?></td><td><?php echo $row[5]?></td><td><?php echo $row[6]?></td></tr>
+            <?php endforeach; ?>
             </table>
         </form>
     </div>
