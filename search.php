@@ -99,7 +99,7 @@
                         echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    } else if(empty($data)){
+                    } else if($_POST['']){
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
                         echo "<td>" . $data[$i] . "</td>";
