@@ -100,15 +100,9 @@
                     } else if(empty($_POST['name'] || $_POST['age'] || $_POST['gender'] ||
                     $_POST['address'] || $_POST['telephone'] || $_POST['mail'] || $_POST['thoughts'])){
                         echo '<tr>';
-
-                        echo "<td>" . $_POST['name'] . "</td>";
-                        echo "<td>" . $_POST['age'] . "</td>";
-                        echo "<td>" . $_POST['gender'] . "</td>";
-                        echo "<td>" . $_POST['address'] . "</td>";
-                        echo "<td>" . $_POST['telephone'] . "</td>";
-                        echo "<td>" . $_POST['mail'] . "</td>";
-                        echo "<td>" . $_POST['thoughts'] . "</td>";
-
+                        for ($i=0;$i<count($data);$i++) {
+                        echo "<td>" . $data[$i] . "</td>";
+                    }
                     echo '</tr>';
                     }
                 }
