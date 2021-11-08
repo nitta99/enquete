@@ -92,7 +92,7 @@ table, th, td {
     line-height: 1.5;
 }
 
-table.type06 th {
+.type06 th {
     width: 50px;
     padding: 10px;
     font-weight: bold;
@@ -100,7 +100,7 @@ table.type06 th {
     background: #3f3f3f;
     color: #ffffff;
 }
-table.type06 td {
+.type06 td {
     width: 100px;
     padding: 10px;
     vertical-align: top;
