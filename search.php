@@ -74,7 +74,7 @@
             </table>
             <table>
                 <?php
-                echo '<table border="1">
+                echo '<table border="1" class="result">
                 <tr>
                     <th>氏名</th>
                     <th>年齢</th>
