@@ -99,7 +99,9 @@
                         echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    } else if($_POST['']){
+                    }else if($data[0]==="" && $data[1]==="" && $data[2]==="" && $data[3]===""
+                    && $data[4]==="" && $data[5]==="" && $data[6]===""){
+                    // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
                         echo "<td>" . $data[$i] . "</td>";
