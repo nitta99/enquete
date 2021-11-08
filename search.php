@@ -72,10 +72,10 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
-            <table class="type06">
+            <table>
                 <?php
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
-                echo '<table border="1">
+                echo '<table class="type06" border="1">
                     <tr>
                     <th>氏名</th>
                     <th>年齢</th>
