@@ -72,7 +72,7 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
-            <table>
+            <table class="type06">
                 <tr>
                     <th>氏名</th>
                     <th>年齢</th>
@@ -100,10 +100,6 @@
                     echo '</tr>';
                     }
                 }
-
-                // テーブルの閉じタグ
-                echo '</table>';
-
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
