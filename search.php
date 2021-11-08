@@ -73,6 +73,8 @@
                 </tr>
             </table>
             <table>
+                <?php
+                echo '<table border="1">
                 <tr>
                     <th>氏名</th>
                     <th>年齢</th>
@@ -81,8 +83,7 @@
                     <th>電話番号</th>
                     <th>メールアドレス</th>
                     <th>感想</th>
-                </tr>
-                <?php
+                </tr>';
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
@@ -109,6 +110,8 @@
                         }
                     }
                 }
+                 // テーブルの閉じタグ
+                echo '</table>';
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
