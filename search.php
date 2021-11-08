@@ -73,15 +73,18 @@
                 </tr>
             </table>
             <table class="result">
+                <thead>
                 <tr>
-                    <th>氏名</th>
-                    <th>年齢</th>
-                    <th>性別</th>
-                    <th>住所</th>
-                    <th>電話番号</th>
-                    <th>メールアドレス</th>
-                    <th>感想</th>
+                    <th class="result-th">氏名</th>
+                    <th class="result-th">年齢</th>
+                    <th class="result-th">性別</th>
+                    <th class="result-th">住所</th>
+                    <th class="result-th">電話番号</th>
+                    <th class="result-th">メールアドレス</th>
+                    <th class="result-th">感想</th>
                 </tr>
+                </thead>
+                <tbody>
                 <?php
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
@@ -103,6 +106,7 @@
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
+                </tbody>
             </table>
         </form>
     </div>
