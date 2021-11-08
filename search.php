@@ -98,8 +98,8 @@
                     }
                     echo '</tr>';
                     }
-                    if (!(isset($_POST["name"], $_POST["age"], $_POST["gender"],
-                    $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"]))) {
+                    if (!isset($_POST["name"], $_POST["age"], $_POST["gender"],
+                    $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"])) {
                         if(empty($_POST['name'] && $_POST['age'] && $_POST['gender'] &&
                         $_POST['address'] && $_POST['telephone'] && $_POST['mail'] && $_POST['thoughts'])){
                             echo '<tr>';
