@@ -71,19 +71,19 @@
                 <tr>
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
-            </table>
-            <table class="result">
-                <tr>
-                    <th class="result-th">氏名</th>
-                    <th class="result-th">年齢</th>
-                    <th class="result-th">性別</th>
-                    <th class="result-th">住所</th>
-                    <th class="result-th">電話番号</th>
-                    <th class="result-th">メールアドレス</th>
-                    <th class="result-th">感想</th>
-                </tr>
                 <?php
-                // test.csvファイルを開いて、読み込みモードに設定する
+                // テーブルタグを作成し、テーブルヘッダーで見出しを作る
+                echo '<table border="1">
+                    <tr>
+                    <th>氏名</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>住所</th>
+                    <th>電話番号</th>
+                    <th>メールアドレス</th>
+                    <th>感想</th>
+                    </tr>';
+                    // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
@@ -100,6 +100,10 @@
                     echo '</tr>';
                     }
                 }
+
+                // テーブルの閉じタグ
+                echo '</table>';
+
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
