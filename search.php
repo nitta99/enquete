@@ -73,8 +73,12 @@
                 </tr>
             </table>
         </form>
-        <table>
-                <tr>
+    </div>
+            <table>
+                <?php
+                // テーブルタグを作成し、テーブルヘッダーで見出しを作る
+                echo '<table border="1">
+                    <tr>
                     <th>氏名</th>
                     <th>年齢</th>
                     <th>性別</th>
@@ -82,8 +86,7 @@
                     <th>電話番号</th>
                     <th>メールアドレス</th>
                     <th>感想</th>
-                </tr>
-                <?php
+                    </tr>';
                     // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
@@ -94,19 +97,11 @@
                     if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
                     || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
                     // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
+                    echo '<tr>';
+                    for ($i=0;$i<count($data);$i++) {
                         echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-                    }else if($data[0]==="" && $data[1]==="" && $data[2]==="" && $data[3]===""
-                    && $data[4]==="" && $data[5]==="" && $data[6]===""){
-                    // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                        echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    }
+                    echo '</tr>';
                     }
                 }
 
@@ -116,7 +111,6 @@
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
-        </table>
-    </div>
+            </table>
 </body>
 </html>
