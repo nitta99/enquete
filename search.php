@@ -71,9 +71,10 @@
                 <tr>
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
-                <?php
+                </form>
+            </table>
+            <table>
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
-                echo '<table border="1">
                     <tr>
                     <th>氏名</th>
                     <th>年齢</th>
@@ -82,7 +83,8 @@
                     <th>電話番号</th>
                     <th>メールアドレス</th>
                     <th>感想</th>
-                    </tr>';
+                    </tr>
+                <?php
                     // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
@@ -98,6 +100,13 @@
                         echo "<td>" . $data[$i] . "</td>";
                     }
                     echo '</tr>';
+                    } else if($data[0]===$_POST[''] || $data[1]===$_POST[''] || $data[2]===$_POST[''] || $data[3]===$_POST['']
+                    || $data[4]===$_POST[''] || $data[5]===$_POST[''] || $data[6]===$_POST['']){
+                    // テーブルセルに配列の値を格納
+                    echo '<tr>';
+                    for ($i=0;$i<count($data);$i++) {
+                        echo "<td>" . $data[$i] . "</td>";
+                    }
                     }
                 }
 
@@ -108,7 +117,6 @@
                 fclose($fp);
                 ?>
             </table>
-        </form>
     </div>
 </body>
 </html>
