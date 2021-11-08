@@ -72,8 +72,9 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
+        </form>
+    </div>
             <table class="result">
-                <thead>
                 <tr>
                     <th class="result-th">氏名</th>
                     <th class="result-th">年齢</th>
@@ -83,8 +84,6 @@
                     <th class="result-th">メールアドレス</th>
                     <th class="result-th">感想</th>
                 </tr>
-                </thead>
-                <tbody>
                 <?php
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
@@ -106,9 +105,6 @@
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
-                </tbody>
             </table>
-        </form>
-    </div>
 </body>
 </html>
