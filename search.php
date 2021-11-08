@@ -72,6 +72,7 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
+            <table class="type06">
                 <?php
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
                 echo '<table border="1">
@@ -84,7 +85,7 @@
                     <th>メールアドレス</th>
                     <th>感想</th>
                     </tr>';
-                    // test.csvファイルを開いて、読み込みモードに設定する
+                // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
