@@ -97,6 +97,12 @@
                         echo "<td>" . $data[$i] . "</td>";
                     }
                     echo '</tr>';
+                    } else if(empty($data)){
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                        echo "<td>" . $data[$i] . "</td>";
+                    }
+                    echo '</tr>';
                     }
                 }
                 // 開いたファイルを閉じる
