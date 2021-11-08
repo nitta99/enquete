@@ -91,7 +91,7 @@ body {
     border: 1px solid #ccc;
     line-height: 1.5;
 }
-.result-th {
+.result th {
     width: 150px;
     padding: 10px;
     font-weight: bold;
@@ -99,7 +99,7 @@ body {
     background: #3f3f3f;
     color: #ffffff;
 }
-.result-td {
+.result td {
     width: 350px;
     padding: 10px;
     vertical-align: top;

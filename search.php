@@ -72,8 +72,6 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
-        </form>
-    </div>
             <table class="result">
                 <tr>
                     <th class="result-th">氏名</th>
@@ -106,5 +104,7 @@
                 fclose($fp);
                 ?>
             </table>
+        </form>
+    </div>
 </body>
 </html>
