@@ -72,9 +72,6 @@
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
             </table>
-        </form>
-    </div>
-            <table>
                 <?php
                 // テーブルタグを作成し、テーブルヘッダーで見出しを作る
                 echo '<table border="1">
@@ -112,5 +109,7 @@
                 fclose($fp);
                 ?>
             </table>
+        </form>
+    </div>
 </body>
 </html>
