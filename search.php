@@ -97,7 +97,7 @@
                         echo "<td>" . $data[$i] . "</td>";
                     }
                     echo '</tr>';
-                    }else if (isset($_POST["name"], $_POST["age"], $_POST["gender"],
+                    }else if (!isset($_POST["name"], $_POST["age"], $_POST["gender"],
                     $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"])) {
                         if(empty($_POST['name'] && $_POST['age'] && $_POST['gender'] &&
                         $_POST['address'] && $_POST['telephone'] && $_POST['mail'] && $_POST['thoughts'])){
