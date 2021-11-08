@@ -73,10 +73,7 @@
                 </tr>
             </table>
             <table>
-                <?php
-                // テーブルタグを作成し、テーブルヘッダーで見出しを作る
-                echo '<table class="type06" border="1">
-                    <tr>
+                <tr>
                     <th>氏名</th>
                     <th>年齢</th>
                     <th>性別</th>
@@ -84,7 +81,8 @@
                     <th>電話番号</th>
                     <th>メールアドレス</th>
                     <th>感想</th>
-                    </tr>';
+                </tr>
+                <?php
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
