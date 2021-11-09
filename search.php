@@ -110,7 +110,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[0] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -119,7 +119,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[1] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -128,7 +128,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[2] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -137,7 +137,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[3] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -146,7 +146,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[4] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -155,7 +155,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[5] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
@@ -164,7 +164,7 @@
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
                         for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[6] . "</td>";
+                            echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
 
