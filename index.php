@@ -119,8 +119,10 @@ function checkTelephone(){
                     </label>
                     </td>
                 </tr>
+                <tr>
                     <input class="contact-submit" type="submit" value="登録" />
-            </table>
+                </tr>
+                </table>
         </form>
     </div>
 </body>
