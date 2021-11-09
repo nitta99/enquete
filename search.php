@@ -97,7 +97,7 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if(preg_match("/$data[0]/", $_GET['name'])){
+                    if(strpos($data[0],$_GET['name']) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
