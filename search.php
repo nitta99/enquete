@@ -105,7 +105,7 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if(strpos($data[0], $NAME) !== false){
+                    if(strpos($data[0], '$NAME') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -115,7 +115,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[1], $AGE) !== false){
+                    }else if(strpos($data[1], '$AGE') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -125,7 +125,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[2], $GENDER) !== false){
+                    }else if(strpos($data[2], '$GENDER') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -135,7 +135,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[3], $ADDRESS) !== false){
+                    }else if(strpos($data[3], '$ADDRESS') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -145,7 +145,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[4], $TELEPHONE) !== false){
+                    }else if(strpos($data[4], '$TELEPHONE') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -155,7 +155,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[5], $MAIL) !== false){
+                    }else if(strpos($data[5], '$MAIL') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -165,7 +165,7 @@
                         echo '</tr>';
                         break;
 
-                    }else if(strpos($data[6], $THOUGHTS) !== false){
+                    }else if(strpos($data[6], '$THOUGHTS') !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
