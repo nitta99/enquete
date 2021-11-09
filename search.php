@@ -70,11 +70,9 @@
                     </label>
                     </td>
                 </tr>
-                <div class="contact-submit">
                 <tr>
-                    <td><input type="submit" value="検索" /></td>
+                    <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
-                </div>
             </table>
             <table>
                 <?php
