@@ -107,8 +107,9 @@
                         }
                         echo '</tr>';
 
+                    }
                     //未入力の場合全件表示
-                    } else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                    if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                                 $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name'] && $_GET['age'] && $_GET['gender'] &&
