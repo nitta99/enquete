@@ -71,7 +71,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input class="contact-submit" type="submit" value="検索" /></td>
+                    <td><input class="button" type="submit" value="検索" /></td>
                 </tr>
             </table>
             <table>
