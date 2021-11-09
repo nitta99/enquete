@@ -109,63 +109,49 @@
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[0] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[1], $AGE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[1] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[2], $GENDER) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[2] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[3], $ADDRESS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[3] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[4], $TELEPHONE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[4] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[5], $MAIL) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[5] . "</td>";
                         echo '</tr>';
 
                     }else if(strpos($data[6], $THOUGHTS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
+                            echo "<td>" . $data[6] . "</td>";
                         echo '</tr>';
 
                     }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
@@ -182,7 +168,7 @@
                         }
                     }
                 }
-                echo $data[0];
+
                  // テーブルの閉じタグ
                 echo '</table>';
 
