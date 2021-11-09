@@ -62,7 +62,7 @@ function checkTelephone(){
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
         <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber() && checkTelephone())">
-            <table class="contact-table"></table>
+            <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
                     <td class="contact-body">
@@ -119,10 +119,11 @@ function checkTelephone(){
                     </label>
                     </td>
                 </tr>
+                </table>
                 <tr>
                     <td><input class="contact-submit" type="submit" value="登録" /></td>
                 </tr>
-                </form>
+        </form>
     </div>
 </body>
 </html>
