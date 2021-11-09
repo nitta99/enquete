@@ -109,73 +109,66 @@
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[0] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[1], $AGE) !== false){
+                    }else if(strpos($data[1], $AGE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[1] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[2], $GENDER) !== false){
+                    }else if(strpos($data[2], $GENDER) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[2] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[3], $ADDRESS) !== false){
+                    }else if(strpos($data[3], $ADDRESS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[3] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[4], $TELEPHONE) !== false){
+                    }else if(strpos($data[4], $TELEPHONE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[4] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[5], $MAIL) !== false){
+                    }else if(strpos($data[5], $MAIL) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[5] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if(strpos($data[6], $THOUGHTS) !== false){
+                    }else if(strpos($data[6], $THOUGHTS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
-                            echo "<td>" . $data[6] . "</td>";
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
                         echo '</tr>';
 
-                    }else{
-                        echo '<td></td>';
-                    }
-                    if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                    }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                         $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&
