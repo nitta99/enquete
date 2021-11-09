@@ -81,6 +81,7 @@ body {
     color         : #ffffff;     /* 文字色     */
     line-height   : 1em;         /* 1行の高さ  */
     transition    : .3s;         /* なめらか変化 */
+    margin        : 0 auto;/*中央寄せ*/
 }
 table.result {
     border-collapse: collapse;
