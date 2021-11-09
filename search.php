@@ -97,8 +97,7 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if($data[0]===$_GET['name'] || $data[1]===$_GET['age'] || $data[2]===$_GET['gender'] || $data[3]===$_GET['address']
-                        || $data[4]===$_GET['telephone'] || $data[5]===$_GET['mail'] || $data[6]===$_GET['thoughts']){
+                    if(preg_match($_GET['name'], $data[0])){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
