@@ -114,7 +114,58 @@
                         }
                         echo '</tr>';
 
-                    } else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                    }else if(preg_match("/$AGE/", $data[1])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+                    }else if(preg_match("/$GENDER/", $data[2])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+                    }else if(preg_match("/$ADDRESS/", $data[3])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+                    }else if(preg_match("/$TELEPHONE/", $data[4])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else if(preg_match("/$MAIL/", $data[5])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else if(preg_match("/$THOUGHTS/", $data[6])){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                                 $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&
