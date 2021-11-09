@@ -87,6 +87,14 @@
                 <th>感想</th>
                 </tr>';
 
+                $NAME = $_GET['name'];
+                $AGE = $_GET['age'];
+                $GENDER = $_GET['gender'];
+                $ADDRESS = $_GET['address'];
+                $TELEPHONE = $_GET['telephone'];
+                $MAIL = $_GET['mail'];
+                $THOUGHTS = $_GET['thoughts'];
+
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
@@ -97,7 +105,7 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if(strpos($data[0],"田") !== false){
+                    if(preg_match("/$NAME/", $data[0])){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
