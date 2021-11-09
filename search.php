@@ -105,7 +105,7 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if(preg_match("/$NAME/", $data[0])){
+                    if(strpos($data[0], $NAME) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -114,8 +114,10 @@
                         }
                         echo '</tr>';
 
+                    }else{
+                        echo '<tr><td></td></tr>';
                     }
-                    else if(preg_match("/$AGE/", $data[1])){
+                    if(strpos($data[1], $AGE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -123,52 +125,69 @@
                             echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    }else if(preg_match("/$GENDER/", $data[2])){
-
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-                    }else if(preg_match("/$ADDRESS/", $data[3])){
-
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-                    }else if(preg_match("/$TELEPHONE/", $data[4])){
-
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-
-                    }else if(preg_match("/$MAIL/", $data[5])){
-
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-
-                    }else if(preg_match("/$THOUGHTS/", $data[6])){
-
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
-
+                    }else{
+                        echo '<tr><td></td></tr>';
                     }
-                    else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
-                                $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
+                    if(strpos($data[2], $GENDER) !== false){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+                    }else{
+                        echo '<tr><td></td></tr>';
+                    }
+                    if(strpos($data[3], $ADDRESS) !== false){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+                    }else{
+                        echo '<tr><td></td></tr>';
+                    }
+                    if(strpos($data[4], $TELEPHONE) !== false){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else{
+                        echo '<tr><td></td></tr>';
+                    }
+                    if(strpos($data[5], $MAIL) !== false){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else{
+                        echo '<tr><td></td></tr>';
+                    }
+                    if(strpos($data[6], $THOUGHTS) !== false){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    }else{
+                        echo '<tr><td></td></tr>';
+                    }
+                    if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                        $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&
                             empty($_GET['telephone']) && empty($_GET['mail']) && empty($_GET['thoughts'])){
