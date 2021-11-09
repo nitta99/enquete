@@ -10,7 +10,6 @@ body {
     width: 960px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
     padding: 60px 0;
-    text-align:center;
 }
 .contact-ttl{
     font-size: 40px;
@@ -77,7 +76,7 @@ body {
     color: #fff;
     font-weight: bold;
     display: block;
-    margin: 0 auto;
+    text-align: center;
     font-size: 16px;
     padding: 15px;
     border-radius: 100vh;
