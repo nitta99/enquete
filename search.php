@@ -114,10 +114,7 @@
                         }
                         echo '</tr>';
 
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[1], $AGE) !== false){
+                    }else if(strpos($data[1], $AGE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -125,10 +122,7 @@
                             echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[2], $GENDER) !== false){
+                    }else if(strpos($data[2], $GENDER) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -136,10 +130,7 @@
                             echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[3], $ADDRESS) !== false){
+                    }else if(strpos($data[3], $ADDRESS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -147,10 +138,7 @@
                             echo "<td>" . $data[$i] . "</td>";
                         }
                         echo '</tr>';
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[4], $TELEPHONE) !== false){
+                    }else if(strpos($data[4], $TELEPHONE) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -159,10 +147,7 @@
                         }
                         echo '</tr>';
 
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[5], $MAIL) !== false){
+                    }else if(strpos($data[5], $MAIL) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -171,10 +156,7 @@
                         }
                         echo '</tr>';
 
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if(strpos($data[6], $THOUGHTS) !== false){
+                    }else if(strpos($data[6], $THOUGHTS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -183,10 +165,7 @@
                         }
                         echo '</tr>';
 
-                    }else{
-                        echo '<tr><td></td></tr>';
-                    }
-                    if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                    }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                         $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&
