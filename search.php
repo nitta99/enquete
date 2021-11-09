@@ -105,7 +105,8 @@
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
                     //入力項目と登録項目が完全一致の場合一覧表示
-                    if(strpos($data[0], $NAME) !== false){
+                    if(strpos($data[0], $NAME) !== false || strpos($data[1], $AGE) !== false || strpos($data[2], $GENDER) !== false || strpos($data[3], $ADDRESS) !== false
+                    || strpos($data[4], $TELEPHONE) !== false || strpos($data[5], $MAIL) !== false || strpos($data[6], $THOUGHTS) !== false){
 
                         // テーブルセルに配列の値を格納
                         echo '<tr>';
@@ -114,59 +115,59 @@
                         }
                         echo '</tr>';
 
-                    }else if(strpos($data[1], $AGE) !== false){
+                    // }else if(strpos($data[1], $AGE) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
-                    }else if(strpos($data[2], $GENDER) !== false){
+                    // }else if(strpos($data[2], $GENDER) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
-                    }else if(strpos($data[3], $ADDRESS) !== false){
+                    // }else if(strpos($data[3], $ADDRESS) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
-                    }else if(strpos($data[4], $TELEPHONE) !== false){
+                    // }else if(strpos($data[4], $TELEPHONE) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
-                    }else if(strpos($data[5], $MAIL) !== false){
+                    // }else if(strpos($data[5], $MAIL) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
-                    }else if(strpos($data[6], $THOUGHTS) !== false){
+                    // }else if(strpos($data[6], $THOUGHTS) !== false){
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                        }
-                        echo '</tr>';
+                    //     // テーブルセルに配列の値を格納
+                    //     echo '<tr>';
+                    //     for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //     }
+                    //     echo '</tr>';
 
                     }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                         $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
