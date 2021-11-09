@@ -8,7 +8,7 @@
 <body>
     <div class ="contact">
     <h1 class="contact-ttl">検索</h1>
-        <form action="search.php" method="post">
+        <form action="search.php" method="get">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
@@ -26,10 +26,9 @@
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
                         <select name="gender" class="form-select">
-                            <option hidden>選択してください</option>
-
-                            <option>男性</option>
-                            <option>女性</option>
+                            <option value="" hidden>選択してください</option>
+                            <option value="man">男性</option>
+                            <option value="woman">女性</option>
                         </select>
                     </td>
                 </tr>
@@ -66,6 +65,9 @@
                         <input type="radio" name="thoughts" value="bad" />
                         <span class="contact-thoughts-txt">悪い</span>
                     </label>
+                    <label class="contact-thoughts">
+                        <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
+                    </label>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +76,7 @@
             </table>
             <table>
                 <?php
-                echo '<table class="result">
+                echo '<table>
                 <tr>
                 <th>氏名</th>
                 <th>年齢</th>
@@ -84,24 +86,34 @@
                 <th>メールアドレス</th>
                 <th>感想</th>
                 </tr>';
+
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
+
                 // while文でCSVファイルのデータを1つずつ繰り返し読み込む
                 while($data = fgetcsv($fp)){
+
+                    //UTF-8に変換
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
-                    if($data[0]===$_POST['name'] || $data[1]===$_POST['age'] || $data[2]===$_POST['gender'] || $data[3]===$_POST['address']
-                    || $data[4]===$_POST['telephone'] || $data[5]===$_POST['mail'] || $data[6]===$_POST['thoughts']){
-                    // テーブルセルに配列の値を格納
-                    echo '<tr>';
-                    for ($i=0;$i<count($data);$i++) {
-                        echo "<td>" . $data[$i] . "</td>";
-                    }
-                    echo '</tr>';
-                    }else if (isset($_POST["name"], $_POST["age"], $_POST["gender"],
-                    $_POST["address"], $_POST["telephone"], $_POST["mail"], $_POST["thoughts"])) {
-                        if(empty($_POST['name'] && $_POST['age'] && $_POST['gender'] &&
-                        $_POST['address'] && $_POST['telephone'] && $_POST['mail'] && $_POST['thoughts'])){
+                    //入力項目と登録項目が完全一致の場合一覧表示
+                    if($data[0]===$_GET['name'] || $data[1]===$_GET['age'] || $data[2]===$_GET['gender'] || $data[3]===$_GET['address']
+                        || $data[4]===$_GET['telephone'] || $data[5]===$_GET['mail'] || $data[6]===$_GET['thoughts']){
+
+                        // テーブルセルに配列の値を格納
+                        echo '<tr>';
+                        for ($i=0;$i<count($data);$i++) {
+                            echo "<td>" . $data[$i] . "</td>";
+                        }
+                        echo '</tr>';
+
+                    //未入力の場合全件表示
+                    } else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                                $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
+
+                        if(empty($_GET['name'] && $_GET['age'] && $_GET['gender'] &&
+                            $_GET['address'] && $_GET['telephone'] && $_GET['mail'] && $_GET['thoughts'])){
+
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
                             echo "<td>" . $data[$i] . "</td>";
@@ -110,6 +122,7 @@
                         }
                     }
                 }
+
                  // テーブルの閉じタグ
                 echo '</table>';
 
