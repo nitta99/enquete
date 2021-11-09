@@ -9,7 +9,7 @@
     <div class ="contact">
     <h1 class="contact-ttl">検索</h1>
         <form action="search.php" method="get">
-            <table class="contact-table">
+            <table class="contact-table"></table>
                 <tr>
                     <th class="contact-item">名前</th>
                     <td class="contact-body">
@@ -70,9 +70,10 @@
                     </label>
                     </td>
                 </tr>
-                    <input class="contact-submit" type="submit" value="検索" />
-            </table>
-            <table>
+                <tr>
+                    <td><input class="contact-submit" type="submit" value="検索" /></td>
+                </tr>
+
                 <?php
                 echo '<table>
                 <tr>
@@ -188,7 +189,6 @@
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
-            </table>
         </form>
     </div>
 </body>
