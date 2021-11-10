@@ -175,23 +175,21 @@
                             echo '<tr>';
                             echo "<td>" . $data[0] . "</td>";
                             echo "<td>" . $data[1] . "</td>";
-                            if($GENDER === "man"){
-                                $data[2] = "男性";
-                            }else if($GENDER === "woman"){
-                                $data[2] = "女性";
+                            if($data[2] === "man"){
+                                echo "<td>" . "男性" . "</td>";
+                            }else if($data[2] === "woman"){
+                                echo "<td>" . "女性" . "</td>";
                             }
-                            echo "<td>" . $data[2] . "</td>";
                             echo "<td>" . $data[3] . "</td>";
                             echo "<td>" . $data[4] . "</td>";
                             echo "<td>" . $data[5] . "</td>";
-                            if($THOUGHTS === "good"){
-                                $data[6] = "良い";
-                            }else if($THOUGHTS === "normal"){
-                                $data[6] = "普通";
-                            }else if($THOUGHTS === "bad"){
-                                $data[6] = "悪い";
+                            if($data[6] === "good"){
+                                echo "<td>" . "良い" . "</td>";
+                            }else if($data[6] === "normal"){
+                                echo "<td>" . "普通" . "</td>";
+                            }else if($data[6] === "bad"){
+                                echo "<td>" . "悪い" . "</td>";
                             }
-                            echo "<td>" . $data[6] . "</td>";
                             echo '</tr>';
                         }
                     }
