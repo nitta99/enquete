@@ -47,9 +47,9 @@ fclose($fp);
                 <th class="contact-item">性別</th>
                 <td class="contact-body">
                     <?php
-                    if($GENDER === "man"){
+                    if($_POST['gender'] === "man"){
                         $GENDER = "男性";
-                    }else if($GENDER === "woman"){
+                    }else if($_POST['gender'] === "woman"){
                         $GENDER = "女性";
                     }
                     echo htmlspecialchars(@$_POST['gender'], ENT_QUOTES, 'UTF-8');
@@ -78,11 +78,11 @@ fclose($fp);
                 <th class="contact-item">感想</th>
                 <td class="contact-body">
                     <?php
-                    if($THOUGHTS === "good"){
+                    if($_POST['thoughts'] === "good"){
                         $THOUGHTS = "良い";
-                    }else if($THOUGHTS === "normal"){
+                    }else if($_POST['thoughts'] === "normal"){
                         $THOUGHTS = "普通";
-                    }else if($THOUGHTS === "bad"){
+                    }else if($_POST['thoughts'] === "bad"){
                         $THOUGHTS = "悪い";
                     }
                     echo htmlspecialchars(@$_POST['thoughts'], ENT_QUOTES, 'UTF-8');
