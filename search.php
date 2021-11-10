@@ -180,7 +180,9 @@
                         }
                     }
                     //検索条件がない場合
-                    else if(empty($get)){
+                    if (isset($get)) {
+
+                        if(empty($get)){
 
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
@@ -188,6 +190,7 @@
                             }
                             echo '</tr>';
                         }
+                    }
                 }
 
                  // テーブルの閉じタグ
