@@ -170,7 +170,7 @@
                             }
                         }
                         //表示用フラグがTrueの場合
-                        if($display === True){
+                        if($flag === True){
                             //データ表示
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
@@ -180,10 +180,9 @@
                         }
                     }
                     //検索条件がない場合
-                    else if (isset($NAME, $AGE, $GENDER, $ADDRESS, $TELEPHONE, $MAIL, $THOUGHTS)) {
+                    else if (isset($get)) {
 
-                        if(empty($NAME) && empty($AGE) && empty($GENDER) && empty($ADDRESS) &&
-                            empty($TELEPHONE) && empty($MAIL) && empty($THOUGHTS)){
+                        if(empty($get)){
 
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
