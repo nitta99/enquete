@@ -116,7 +116,7 @@
                         //名前が入力されている場合
                         if(empty($NAME) === false){
                             //部分一致しない場合
-                            if(strpos($data[0], $NAME) !== false){
+                            if(strpos($data[0], $NAME) === false){
                                 //表示用フラグをfalseに
                                 $flag = false;
                             }
@@ -140,7 +140,7 @@
                         //住所が入力されている場合
                         if(empty($ADDRESS) === false){
                             //部分一致しない場合
-                            if(strpos($data[3], $ADDRESS) !== false){
+                            if(strpos($data[3], $ADDRESS) === false){
                                 //表示用フラグをfalseに
                                 $flag = false;
                             }
@@ -148,7 +148,7 @@
                         //電話番号が入力されている場合
                         if(empty($TELEPHONE) === false){
                             //部分一致しない場合
-                            if(strpos($data[4], $TELEPHONE) !== false){
+                            if(strpos($data[4], $TELEPHONE) === false){
                                 //表示用フラグをfalseに
                                 $flag = false;
                             }
@@ -156,7 +156,7 @@
                         //メールアドレスが入力されている場合
                         if(empty($MAIL) === false){
                             //部分一致しない場合
-                            if(strpos($data[5], $MAIL) !== false){
+                            if(strpos($data[5], $MAIL) === false){
                                 //表示用フラグをfalseに
                                 $flag = false;
                             }
