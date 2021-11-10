@@ -170,7 +170,7 @@
                             }
                         }
                         //表示用フラグがTrueの場合
-                        if($display === True){
+                        if($flag === True){
                             //データ表示
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
@@ -180,11 +180,10 @@
                         }
                     }
                     //検索条件がない場合
-                    else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
-                        $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
+                    else if (isset($NAME, $AGE, $GENDER, $ADDRESS, $TELEPHONE, $MAIL, $THOUGHTS)) {
 
-                        if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&
-                            empty($_GET['telephone']) && empty($_GET['mail']) && empty($_GET['thoughts'])){
+                        if(empty($NAME) && empty($AGE) && empty($GENDER) && empty($ADDRESS) &&
+                            empty($TELEPHONE) && empty($MAIL) && empty($THOUGHTS)){
 
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
