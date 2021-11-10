@@ -7,14 +7,14 @@ body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 .contact {
-    width: 960px;/*横幅*/
+    width: 480px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
-    padding: 60px 0;
+    padding: 30px 0;
 }
 .contact-ttl{
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 }
 .contact-table {
@@ -71,7 +71,7 @@ body {
     border-radius: 5px;
 }
 .contact-submit {
-    width: 250px;
+    width: 125px;
     background-color: #333;
     color: #fff;
     font-weight: bold;
