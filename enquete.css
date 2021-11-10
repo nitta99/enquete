@@ -172,7 +172,7 @@ table.result {
     line-height: 1.5;
 }
 table.result th {
-    width: 250px;
+    width: 150px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
@@ -180,7 +180,7 @@ table.result th {
     color: #ffffff;
 }
 table.result td {
-    width: 300px;
+    width: 150px;
     padding: 10px;
     vertical-align: top;
 }
