@@ -87,23 +87,23 @@ body {
     cursor: pointer;
 }
 .contact {
-    width: 550px;/*横幅*/
+    width: 960px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
-    padding: 30px 0;
+    padding: 60px 0;
 }
 .contact-ttl{
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-align: center;
 }
 .contact-table {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .contact-item,
 .contact-body {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ccc;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 .form-text {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -128,7 +128,7 @@ body {
 }
 .form-age-text {
     width: 15%;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -149,6 +149,22 @@ body {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+.contact-submit {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 100vh;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
 }
 table.result {
     border-collapse: collapse;
