@@ -74,7 +74,7 @@
                 <tr>
                     <td><input class="contact-submit" type="submit" value="検索" /></td>
                 </tr>
-
+        </form>
                 <?php
                 echo '<table class="result">
                 <tr>
@@ -201,8 +201,6 @@
                 // 開いたファイルを閉じる
                 fclose($fp);
                 ?>
-
-        </form>
     </div>
 </body>
 </html>
