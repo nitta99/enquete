@@ -27,8 +27,8 @@
                     <td class="contact-body">
                         <select name="gender" class="form-select">
                             <option value="" hidden>選択してください</option>
-                            <option value="男性">男性</option>
-                            <option value="女性">女性</option>
+                            <option value="man">男性</option>
+                            <option value="woman">女性</option>
                         </select>
                     </td>
                 </tr>
@@ -54,15 +54,15 @@
                     <th class="contact-item">感想</th>
                     <td class="contact-body">
                     <label class="contact-thoughts">
-                        <input type="radio" name="thoughts" value="良い" />
+                        <input type="radio" name="thoughts" value="good" />
                         <span class="contact-thoughts-txt">良い</span>
                     </label>
                     <label class="contact-thoughts">
-                        <input type="radio" name="thoughts" value="普通" />
+                        <input type="radio" name="thoughts" value="normal" />
                         <span class="contact-thoughts-txt">普通</span>
                     </label>
                     <label class="contact-thoughts">
-                        <input type="radio" name="thoughts" value="悪い" />
+                        <input type="radio" name="thoughts" value="bad" />
                         <span class="contact-thoughts-txt">悪い</span>
                     </label>
                     <label class="contact-thoughts">
