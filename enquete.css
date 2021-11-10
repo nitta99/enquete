@@ -167,6 +167,8 @@ body {
     cursor: pointer;
 }
 table.result {
+    width: 100%;
+    margin-bottom: 10px;
     border-collapse: collapse;
     border: 1px solid #ccc;
     line-height: 1.5;
