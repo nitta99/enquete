@@ -180,17 +180,18 @@
                         }
 
                     //検索条件がない場合
-                    }else if (isset($get)) {
-
-                        if(empty($get)){
-
-                            echo '<tr>';
-                            for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
-                            }
-                            echo '</tr>';
-                        }
                     }
+                    // else if (isset($get)) {
+
+                    //     if(empty($get)){
+
+                    //         echo '<tr>';
+                    //         for ($i=0;$i<count($data);$i++) {
+                    //         echo "<td>" . $data[$i] . "</td>";
+                    //         }
+                    //         echo '</tr>';
+                    //     }
+                    // }
                 }
 
                  // テーブルの閉じタグ
