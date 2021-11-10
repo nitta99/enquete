@@ -25,10 +25,10 @@
                 <th class="contact-item">性別</th>
                 <td class="contact-body">
                     <?php
-                    if($_POST['age'] === "man"){
-                        $_POST['age'] = "男性";
-                    }else if($_POST['age'] === "woman"){
-                        $_POST['age'] = "女性";
+                    if($_POST['gender'] === "man"){
+                        $_POST['gender'] = "男性";
+                    }else if($_POST['gender'] === "woman"){
+                        $_POST['gender'] = "女性";
                     }
                     echo htmlspecialchars(@$_POST['gender'], ENT_QUOTES, 'UTF-8');
                     ?>
