@@ -104,6 +104,20 @@
                     $MAIL = $_GET['mail'];
                     $THOUGHTS = $_GET['thoughts'];
 
+                    if($GENDER === "man"){
+                        $GENDER = "男性";
+                    }else if($GENDER === "woman"){
+                        $GENDER = "女性";
+                    }
+
+                    if($THOUGHTS === "good"){
+                        $THOUGHTS = "良い";
+                    }else if($THOUGHTS === "normal"){
+                        $THOUGHTS = "普通";
+                    }else if($THOUGHTS === "bad"){
+                        $THOUGHTS = "悪い";
+                    }
+
                     // 表示用フラグ
                     $flag = True;
 
@@ -171,19 +185,6 @@
                         }
                         //表示用フラグがTrueの場合
                         if($flag === True){
-                            if($GENDER === "man"){
-                                $data[2] = "男性";
-                            }else if($GENDER === "woman"){
-                                $data[2] = "女性";
-                            }
-
-                            if($THOUGHTS === "good"){
-                                $data[6] = "良い";
-                            }else if($THOUGHTS === "normal"){
-                                $data[6] = "普通";
-                            }else if($THOUGHTS === "bad"){
-                                $data[6] = "悪い";
-                            }
                             //データ表示
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
