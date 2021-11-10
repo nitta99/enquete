@@ -68,11 +68,6 @@ $THOUGHTS = $_POST['thoughts'];
 //ストリームフィルタ指定
 stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
 
-if($GENDER === "男性"){
-    $GENDER = "man";
-}else if($GENDER === "女性"){
-    $GENDER = "woman";
-}
 // CSVファイルに書き込む
 fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
 
