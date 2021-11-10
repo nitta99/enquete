@@ -6,26 +6,26 @@
 <title>検索画面</title>
 </head>
 <body>
-    <div class ="contact">
-    <h1 class="contact-ttl">検索</h1>
+    <div class ="search">
+    <h1 class="search-ttl">検索</h1>
         <form action="search.php" method="get">
-            <table class="contact-table">
+            <table class="search-table">
                 <tr>
-                    <th class="contact-item">名前</th>
-                    <td class="contact-body">
-                        <input type="text" name="name" class="form-text" value="">
+                    <th class="search-item">名前</th>
+                    <td class="search-body">
+                        <input type="text" name="name" class="search-text" value="">
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">年齢</th>
-                    <td class="contact-body">
-                        <input type="text" name="age" class="form-age-text" value="">歳
+                    <th class="search-item">年齢</th>
+                    <td class="search-body">
+                        <input type="text" name="age" class="search-age-text" value="">歳
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">性別</th>
-                    <td class="contact-body">
-                        <select name="gender" class="form-select">
+                    <th class="search-item">性別</th>
+                    <td class="search-body">
+                        <select name="gender" class="search-select">
                             <option value="" hidden>選択してください</option>
                             <option value="man">男性</option>
                             <option value="woman">女性</option>
@@ -33,39 +33,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">住所</th>
-                    <td class="contact-body">
-                        <input type="text" name="address" class="form-text" value="">
+                    <th class="search-item">住所</th>
+                    <td class="search-body">
+                        <input type="text" name="address" class="search-text" value="">
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">電話番号</th>
-                    <td class="contact-body">
-                        <input type="text" name="telephone" class="form-text" value="">
+                    <th class="search-item">電話番号</th>
+                    <td class="search-body">
+                        <input type="text" name="telephone" class="search-text" value="">
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">メ―ルアドレス</th>
-                    <td class="contact-body">
-                        <input type="text" name="mail" class="form-text" value="">
+                    <th class="search-item">メ―ルアドレス</th>
+                    <td class="search-body">
+                        <input type="text" name="mail" class="search-text" value="">
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">感想</th>
-                    <td class="contact-body">
-                    <label class="contact-thoughts">
+                    <th class="search-item">感想</th>
+                    <td class="search-body">
+                    <label class="search-thoughts">
                         <input type="radio" name="thoughts" value="good" />
-                        <span class="contact-thoughts-txt">良い</span>
+                        <span class="search-thoughts-txt">良い</span>
                     </label>
-                    <label class="contact-thoughts">
+                    <label class="search-thoughts">
                         <input type="radio" name="thoughts" value="normal" />
-                        <span class="contact-thoughts-txt">普通</span>
+                        <span class="search-thoughts-txt">普通</span>
                     </label>
-                    <label class="contact-thoughts">
+                    <label class="search-thoughts">
                         <input type="radio" name="thoughts" value="bad" />
-                        <span class="contact-thoughts-txt">悪い</span>
+                        <span class="search-thoughts-txt">悪い</span>
                     </label>
-                    <label class="contact-thoughts">
+                    <label class="search-thoughts">
                         <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
                     </label>
                     </td>

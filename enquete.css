@@ -6,6 +6,86 @@ body {
     color: #333;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
+.search {
+    width: 550px;/*横幅*/
+    margin: 0 auto;/*中央寄せ*/
+    padding: 30px 0;
+}
+.search-ttl{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.search-table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.search-item,
+.search-body {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.search-item {
+    text-align: left;
+    width: 30%;
+    background-color: #eee;
+}
+
+.search-body {
+    width: 70%;
+}
+.search-text {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
+.search-age-text {
+    width: 15%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
+.search-thoughts + .search-thoughts {
+    margin-left: 10px;
+}
+
+.search-thoughts-txt {
+    margin-left: 5px;
+}
+.search-select {
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-submit {
+    width: 125px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 100vh;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
 .contact {
     width: 550px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
@@ -70,29 +150,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.contact-submit {
-    width: 125px;
-    background-color: #333;
-    color: #fff;
-    font-weight: bold;
-    display: block;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 15px;
-    border-radius: 100vh;
-    border: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-}
 table.result {
     border-collapse: collapse;
     border: 1px solid #ccc;
     line-height: 1.5;
 }
 table.result th {
-    width: 250px;
+    width: 150px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
