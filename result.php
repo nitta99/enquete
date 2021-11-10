@@ -1,3 +1,25 @@
+<?php
+
+// 書き込み対象のCSVファイルを開く
+$fp = fopen("data.csv", "a");
+
+$NAME = $_POST['name'];
+$AGE = $_POST['age'];
+$GENDER = $_POST['gender'];
+$ADDRESS = $_POST['address'];
+$TELEPHONE = $_POST['telephone'];
+$MAIL = $_POST['mail'];
+$THOUGHTS = $_POST['thoughts'];
+
+//ストリームフィルタ指定
+stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
+
+// CSVファイルに書き込む
+fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
+
+// 書き込み対象のファイルをクローズ
+fclose($fp);
+?>
 <!doctype html>
 <html>
 <head>
@@ -68,28 +90,6 @@
                 </td>
             </tr>
         </table>
-<?php
-
-// 書き込み対象のCSVファイルを開く
-$fp = fopen("data.csv", "a");
-
-$NAME = $_POST['name'];
-$AGE = $_POST['age'];
-$GENDER = $_POST['gender'];
-$ADDRESS = $_POST['address'];
-$TELEPHONE = $_POST['telephone'];
-$MAIL = $_POST['mail'];
-$THOUGHTS = $_POST['thoughts'];
-
-//ストリームフィルタ指定
-stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
-
-// CSVファイルに書き込む
-fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
-
-// 書き込み対象のファイルをクローズ
-fclose($fp);
-?>
     </div>
 </body>
 </html>
