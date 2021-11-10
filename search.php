@@ -178,9 +178,9 @@
                             }
                             echo '</tr>';
                         }
-                    }
+
                     //検索条件がない場合
-                    if (isset($get)) {
+                    }else if (isset($get)) {
 
                         if(empty($get)){
 
