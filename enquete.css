@@ -19,11 +19,11 @@ body {
 }
 .contact-table {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .contact-item,
 .contact-body {
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 .form-text {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -48,7 +48,7 @@ body {
 }
 .form-age-text {
     width: 15%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
