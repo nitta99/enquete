@@ -87,14 +87,6 @@
                 <th>感想</th>
                 </tr>';
 
-                $NAME = $_GET['name'];
-                $AGE = $_GET['age'];
-                $GENDER = $_GET['gender'];
-                $ADDRESS = $_GET['address'];
-                $TELEPHONE = $_GET['telephone'];
-                $MAIL = $_GET['mail'];
-                $THOUGHTS = $_GET['thoughts'];
-
                 // test.csvファイルを開いて、読み込みモードに設定する
                 $fp = fopen('data.csv', 'r');
 
@@ -104,72 +96,91 @@
                     //UTF-8に変換
                     mb_convert_variables("UTF-8", "SJIS-win", $data);
 
-                    //入力項目と登録項目が完全一致の場合一覧表示
-                    if(strpos($data[0], $NAME) !== false || strpos($data[1], $AGE) !== false || strpos($data[2], $GENDER) !== false || strpos($data[3], $ADDRESS) !== false
-                    || strpos($data[4], $TELEPHONE) !== false || strpos($data[5], $MAIL) !== false || strpos($data[6], $THOUGHTS) !== false){
+                    $NAME = $_GET['name'];
+                    $AGE = $_GET['age'];
+                    $GENDER = $_GET['gender'];
+                    $ADDRESS = $_GET['address'];
+                    $TELEPHONE = $_GET['telephone'];
+                    $MAIL = $_GET['mail'];
+                    $THOUGHTS = $_GET['thoughts'];
 
-                        // テーブルセルに配列の値を格納
-                        echo '<tr>';
-                        for ($i=0;$i<count($data);$i++) {
-                            echo "<td>" . $data[$i] . "</td>";
+                    // 表示用フラグ
+                    $flag = True;
+
+                    // 検索条件を取得
+                    $get = $_GET;
+
+                    //検索条件がある場合
+                    if(!empty($get)){
+
+                        //名前が入力されている場合
+                        if(empty($NAME) === false){
+                            //部分一致しない場合
+                            if(strpos($data[0], $NAME) !== false){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
                         }
-                        echo '</tr>';
-
-                    // }else if(strpos($data[1], $AGE) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    // }else if(strpos($data[2], $GENDER) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    // }else if(strpos($data[3], $ADDRESS) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    // }else if(strpos($data[4], $TELEPHONE) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    // }else if(strpos($data[5], $MAIL) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    // }else if(strpos($data[6], $THOUGHTS) !== false){
-
-                    //     // テーブルセルに配列の値を格納
-                    //     echo '<tr>';
-                    //     for ($i=0;$i<count($data);$i++) {
-                    //         echo "<td>" . $data[$i] . "</td>";
-                    //     }
-                    //     echo '</tr>';
-
-                    }else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
+                        //年齢が入力されている場合
+                        if(empty($AGE) === false){
+                            //完全一致しない場合
+                            if($data[1] !== $AGE){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //性別が入力されている場合
+                        if(empty($GENDER) === false){
+                            //完全一致しない場合
+                            if($data[2] !== $GENDER){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //住所が入力されている場合
+                        if(empty($ADDRESS) === false){
+                            //部分一致しない場合
+                            if(strpos($data[3], $ADDRESS) !== false){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //電話番号が入力されている場合
+                        if(empty($TELEPHONE) === false){
+                            //部分一致しない場合
+                            if(strpos($data[4], $TELEPHONE) !== false){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //メールアドレスが入力されている場合
+                        if(empty($MAIL) === false){
+                            //部分一致しない場合
+                            if(strpos($data[5], $MAIL) !== false){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //感想が入力されている場合
+                        if(empty($THOUGHTS) === false){
+                            //完全一致しない場合
+                            if($data[6] !== $THOUGHTS){
+                                //表示用フラグをfalseに
+                                $flag = false;
+                            }
+                        }
+                        //表示用フラグがTrueの場合
+                        if($display === True){
+                            //データ表示
+                            echo '<tr>';
+                            for ($i=0;$i<count($data);$i++) {
+                                echo "<td>" . $data[$i] . "</td>";
+                            }
+                            echo '</tr>';
+                        }
+                    }
+                    //検索条件がない場合
+                    else if (isset($_GET["name"], $_GET["age"], $_GET["gender"],
                         $_GET["address"], $_GET["telephone"], $_GET["mail"], $_GET["thoughts"])) {
 
                         if(empty($_GET['name']) && empty($_GET['age']) && empty($_GET['gender']) && empty($_GET['address']) &&

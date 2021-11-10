@@ -79,8 +79,8 @@ function checkTelephone(){
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
                         <select name="gender" class="form-select">
-                            <option selected="selected">男性</option>
-                            <option>女性</option>
+                            <option selected="selected" value="man">男性</option>
+                            <option value="woman">女性</option>
                         </select>
                     </td>
                 </tr>
