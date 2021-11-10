@@ -170,7 +170,7 @@
                             }
                         }
                         //表示用フラグがTrueの場合
-                        if($flag === True){
+                        if($display === True){
                             //データ表示
                             echo '<tr>';
                             for ($i=0;$i<count($data);$i++) {
