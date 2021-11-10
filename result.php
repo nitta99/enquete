@@ -34,13 +34,13 @@ fclose($fp);
             <tr>
                 <th class="contact-item">名前</th>
                 <td class="contact-body">
-                    <?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?>
+                    <?php echo htmlspecialchars(@$NAME, ENT_QUOTES, 'UTF-8'); ?>
                 </td>
             </tr>
             <tr>
                 <th class="contact-item">年齢</th>
                 <td class="contact-body">
-                    <?php echo (int)@$_POST['age'];?>歳
+                    <?php echo (int)@$AGE;?>歳
                 </td>
             </tr>
             <tr>
@@ -59,19 +59,19 @@ fclose($fp);
             <tr>
                 <th class="contact-item">住所</th>
                 <td class="contact-body">
-                    <?php echo htmlspecialchars(@$_POST['address'], ENT_QUOTES, 'UTF-8'); ?>
+                    <?php echo htmlspecialchars(@$ADDRESS, ENT_QUOTES, 'UTF-8'); ?>
             </td>
             </tr>
             <tr>
                 <th class="contact-item">電話番号</th>
                 <td class="contact-body">
-                    <?php echo htmlspecialchars(@$_POST['telephone'], ENT_QUOTES, 'UTF-8'); ?>
+                    <?php echo htmlspecialchars(@$TELEPHONE, ENT_QUOTES, 'UTF-8'); ?>
             </td>
             </tr>
             <tr>
                 <th class="contact-item">メ―ルアドレス</th>
                 <td class="contact-body">
-                    <?php echo htmlspecialchars(@$_POST['mail'], ENT_QUOTES, 'UTF-8'); ?>
+                    <?php echo htmlspecialchars(@$MAIL, ENT_QUOTES, 'UTF-8'); ?>
             </td>
             </tr>
             <tr>
