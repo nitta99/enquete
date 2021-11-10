@@ -104,20 +104,6 @@
                     $MAIL = $_GET['mail'];
                     $THOUGHTS = $_GET['thoughts'];
 
-                    if($GENDER === "man"){
-                        $GENDER = "男性";
-                    }else if($GENDER === "woman"){
-                        $GENDER = "女性";
-                    }
-
-                    if($THOUGHTS === "good"){
-                        $THOUGHTS = "良い";
-                    }else if($THOUGHTS === "normal"){
-                        $THOUGHTS = "普通";
-                    }else if($THOUGHTS === "bad"){
-                        $THOUGHTS = "悪い";
-                    }
-
                     // 表示用フラグ
                     $flag = True;
 

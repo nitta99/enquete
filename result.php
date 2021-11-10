@@ -18,7 +18,14 @@
             <tr>
                 <th class="contact-item">年齢</th>
                 <td class="contact-body">
-                    <?php echo (int)@$_POST['age']; ?>歳
+                    <?php
+                    if($_POST['age'] === "man"){
+                        $_POST['age'] = "男性";
+                    }else if($_POST['age'] === "woman"){
+                        $_POST['age'] = "女性";
+                    }
+                    echo (int)@$_POST['age'];
+                    ?>歳
                 </td>
             </tr>
             <tr>
@@ -48,7 +55,16 @@
             <tr>
                 <th class="contact-item">感想</th>
                 <td class="contact-body">
-                    <?php echo htmlspecialchars(@$_POST['thoughts'], ENT_QUOTES, 'UTF-8');?>
+                    <?php
+                    if($_POST['thoughts'] === "good"){
+                        $_POST['thoughts'] = "良い";
+                    }else if($_POST['thoughts'] === "normal"){
+                        $_POST['thoughts'] = "普通";
+                    }else if($_POST['thoughts'] === "bad"){
+                        $_POST['thoughts'] = "悪い";
+                    }
+                    echo htmlspecialchars(@$_POST['thoughts'], ENT_QUOTES, 'UTF-8');
+                    ?>
                 </td>
             </tr>
         </table>
