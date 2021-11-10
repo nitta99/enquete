@@ -167,6 +167,7 @@ body {
     cursor: pointer;
 }
 table.result {
+    margin: 0 auto;/*中央寄せ*/
     border-collapse: collapse;
     border: 1px solid #ccc;
     line-height: 1.5;
