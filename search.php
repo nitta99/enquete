@@ -172,17 +172,17 @@
                         //表示用フラグがTrueの場合
                         if($flag === True){
                             if($GENDER === "man"){
-                                $GENDER = "男性";
+                                $data[2] = "男性";
                             }else if($GENDER === "woman"){
-                                $GENDER = "女性";
+                                $data[2] = "女性";
                             }
 
                             if($THOUGHTS === "good"){
-                                $THOUGHTS = "良い";
+                                $data[6] = "良い";
                             }else if($THOUGHTS === "normal"){
-                                $THOUGHTS = "普通";
+                                $data[6] = "普通";
                             }else if($THOUGHTS === "bad"){
-                                $THOUGHTS = "悪い";
+                                $data[6] = "悪い";
                             }
                             //データ表示
                             echo '<tr>';
