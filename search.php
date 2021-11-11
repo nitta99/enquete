@@ -19,10 +19,7 @@ function goSearch(){
 <body>
 <table class="table-navi">
     <tr>
-        <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
-        <hr>
-        <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
-    </tr>
+        <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button><hr><button class="navigation" type="button" onclick="goSearch()">検索画面</button>
 </table>
     <div class ="search">
     <h1 class="search-ttl">検索</h1>
