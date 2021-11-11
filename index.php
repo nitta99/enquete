@@ -64,16 +64,15 @@ function goSearch(){
 }
 </script>
 
-<table class="table-navi">
-    <tr>
-        <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
-        <td><hr></td>
-        <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
-    </tr>
-</table>
-
 </head>
 <body>
+    <table class="table-navi">
+        <tr>
+            <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
+            <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
+        </tr>
+    </table>
+    <hr/>
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
         <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber() && checkTelephone())">
