@@ -91,23 +91,25 @@ function goSearch(){
                 </tr>
             </table>
                 <tr>
-                    <td><input class="contact-submit" type="submit" value="検索" /></td>
+                    <td><input class="contact-submit" type="submit" name="search" value="検索" /></td>
                 </tr>
         </form>
     </div>
     <?php
+        if (isset($_GET['search'])) {
+            echo '<table class="result">
+                <tr>
+                    <th>氏名</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>住所</th>
+                    <th>電話番号</th>
+                    <th>メールアドレス</th>
+                    <th>感想</th>
+                </tr>';
+        }
         // test.csvファイルを開いて、読み込みモードに設定する
         $fp = fopen('data.csv', 'r');
-        echo '<table class="result">
-                    <tr>
-                        <th>氏名</th>
-                        <th>年齢</th>
-                        <th>性別</th>
-                        <th>住所</th>
-                        <th>電話番号</th>
-                        <th>メールアドレス</th>
-                        <th>感想</th>
-                    </tr>';
 
         // while文でCSVファイルのデータを1つずつ繰り返し読み込む
         while($data = fgetcsv($fp)){
