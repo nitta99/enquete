@@ -205,3 +205,6 @@ table.result tr:nth-child(even) {
     line-height   : 1em;         /* 1行の高さ  */
     border: none;
 }
+.navigation:not(:first-child)::before {
+    content: "/";
+}
