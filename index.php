@@ -59,9 +59,12 @@ function checkTelephone(){
 function goSearch(){
     location.href="search.php";
 }
+function goResult(){
+    location.href="result.php";
+}
 </script>
 
-<input type="button" onclick="goSearch()" value="検索画面">
+<input type="button" onclick="goResult()" value="登録内容画面"><input type="button" onclick="goSearch()" value="検索画面">
 
 </head>
 <body>

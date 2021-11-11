@@ -10,9 +10,12 @@
 function goIndex(){
     location.href="index.php";
 }
+function goResult(){
+    location.href="result.php";
+}
 </script>
 
-<input type="button" onclick="goIndex()" value="登録画面">
+<input type="button" onclick="goIndex()" value="登録画面"><input type="button" onclick="goResult()" value="登録内容画面">
 
 </head>
 <body>
