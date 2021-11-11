@@ -9,7 +9,6 @@ body {
 .search {
     width: 550px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
-    padding: 5px 0;
 }
 .search-ttl{
     font-size: 40px;
@@ -90,7 +89,6 @@ body {
 .contact {
     width: 960px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
-    padding: 5px 0;
 }
 .contact-ttl{
     font-size: 40px;
