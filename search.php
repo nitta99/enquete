@@ -15,7 +15,7 @@ function goResult(){
 }
 </script>
 
-<input type="button" onclick="goIndex()" value="登録画面"><input type="button" onclick="goResult()" value="登録内容画面">
+<td><input class="navigation" type="button" onclick="goIndex()" value="登録画面"></td><td><input class="navigation" type="button" onclick="goResult()" value="登録内容画面"></td>
 
 </head>
 <body>
