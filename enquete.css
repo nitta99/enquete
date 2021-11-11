@@ -196,7 +196,7 @@ table.result tr:nth-child(even) {
 }
 .navigation {
     display       : inline-block;
-    font-size     : 10pt;        /* 文字サイズ */
+    font-size     : 13pt;        /* 文字サイズ */
     text-align    : center;      /* 文字位置   */
     cursor        : pointer;     /* カーソル   */
     padding       : 5px 5px;   /* 余白       */
