@@ -63,12 +63,15 @@ function goResult(){
     location.href="result.php";
 }
 </script>
-<tr>
-    <td><button class="navigation" type="button" onclick="goResult()">登録内容画面</button></td>
-</tr>
-<tr>
-    <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
-</tr>
+
+<table class="table-navi">
+    <tr>
+        <td><button class="navigation" type="button" onclick="goResult()">登録内容画面</button></td>
+    </tr>
+    <tr>
+        <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
+    </tr>
+</table>
 
 </head>
 <body>
