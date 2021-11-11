@@ -18,8 +18,6 @@ function goResult(){
 <table class="table-navi">
     <tr>
         <td><button　class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
-    </tr>
-    <tr>
         <td><button class="navigation" type="button" onclick="goResult()">登録内容画面</button></td>
     </tr>
 </table>
