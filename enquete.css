@@ -175,7 +175,7 @@ table.result {
 
 }
 table.result th {
-    width: 250px;
+    width: 200px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
@@ -184,7 +184,7 @@ table.result th {
     border: solid 1px;
 }
 table.result td {
-    width: 250px;
+    width: 200px;
     padding: 10px;
     vertical-align: top;
     border: solid 1px;
