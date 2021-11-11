@@ -21,7 +21,7 @@ function goSearch(){
         <tr>
             <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
             <td>/</td>
-            <td><button class="navigation" type="button" onclick="goSearch()" disabled>検索画面</button></td>
+            <th style="font-size : 20px;">検索画面</th>
         </tr>
     </table>
     <hr/>

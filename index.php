@@ -68,7 +68,7 @@ function goSearch(){
 <body>
     <table class="table-navi">
         <tr>
-            <td><button class="navigation" type="button" onclick="goIndex()" disabled>登録画面</button></td>
+            <th style="font-size : 20px;">登録画面</th>
             <td>/</td>
             <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
         </tr>
