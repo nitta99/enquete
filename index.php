@@ -6,7 +6,7 @@
 <title>アンケート</title>
 
 <script type="text/javascript">
-
+//名前入力チェック
 function checkName(){
 	var flag = 0;
 	// 設定開始（必須にする項目を設定してください）
@@ -22,7 +22,7 @@ function checkName(){
 		return true; // 送信を実行
 	}
 }
-
+//年齢数値チェック
 function checkNumber(){
     var flag = 0;
     // 設定開始（チェックする項目を設定してください）
@@ -37,7 +37,7 @@ function checkNumber(){
        return true; // 送信を実行
     }
 }
-
+//電話番号入力数値チェック
 function checkTelephone(){
 	var flag = 0;
 	// 設定開始（必須にする項目を設定してください）
@@ -55,8 +55,12 @@ function checkTelephone(){
 		return true; // 送信を実行
 	}
 }
-
+//指定ページ遷移
+function goSearch(){
+    location.href="search.php";
+}
 </script>
+<input type="button" onclick="goSearch()" value="検索画面">
 </head>
 <body>
     <div class ="contact">
