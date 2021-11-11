@@ -10,8 +10,8 @@
 function goIndex(){
     location.href="index.php";
 }
-function goResult(){
-    location.href="result.php";
+function goSearch(){
+    location.href="search.php";
 }
 </script>
 
@@ -20,7 +20,8 @@ function goResult(){
 <table class="table-navi">
     <tr>
         <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
-        <td><button class="navigation" type="button" onclick="goResult()">登録内容画面</button></td>
+        <hr/>
+        <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
     </tr>
 </table>
     <div class ="search">

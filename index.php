@@ -56,17 +56,18 @@ function checkTelephone(){
 	}
 }
 //指定ページ遷移
+function goIndex(){
+    location.href="index.php";
+}
 function goSearch(){
     location.href="search.php";
-}
-function goResult(){
-    location.href="result.php";
 }
 </script>
 
 <table class="table-navi">
     <tr>
-        <td><button class="navigation" type="button" onclick="goResult()">登録内容画面</button></td>
+        <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
+        <hr/>
         <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
     </tr>
 </table>

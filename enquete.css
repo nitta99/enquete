@@ -12,9 +12,9 @@ body {
     padding: 30px 0;
 }
 .search-ttl{
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-align: center;
 }
 .search-table {
@@ -203,4 +203,5 @@ table.result tr:nth-child(even) {
     background    : rgba(255, 255, 255, 0.10);     /* 背景色     */
     color         : #00007f;     /* 文字色     */
     line-height   : 1em;         /* 1行の高さ  */
+    border: none;
 }
