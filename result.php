@@ -36,8 +36,12 @@ function goSearch(){
     location.href="search.php";
 }
 </script>
-
-<td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td><td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
+<tr>
+    <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
+</tr>
+<tr>
+    <td><button class="navigation" type="button" onclick="goSearch()">検索画面</button></td>
+</tr>
 
 </head>
 <body>
