@@ -26,6 +26,19 @@ fclose($fp);
 <meta charset="utf-8">
 <link rel="stylesheet" href="enquete.css" media="all" />
 <title>結果表示画面</title>
+
+<script type="text/javascript">
+//指定ページ遷移
+function goIndex(){
+    location.href="index.php";
+}
+function goSearch(){
+    location.href="search.php";
+}
+</script>
+
+<input type="button" onclick="goIndex()" value="登録画面"><input type="button" onclick="goSearch()" value="検索画面">
+
 </head>
 <body>
     <div class ="contact">

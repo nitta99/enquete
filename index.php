@@ -60,7 +60,9 @@ function goSearch(){
     location.href="search.php";
 }
 </script>
+
 <input type="button" onclick="goSearch()" value="検索画面">
+
 </head>
 <body>
     <div class ="contact">
