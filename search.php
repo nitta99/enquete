@@ -98,6 +98,16 @@ function goSearch(){
     <?php
         // test.csvファイルを開いて、読み込みモードに設定する
         $fp = fopen('data.csv', 'r');
+        echo '<table class="result">
+                    <tr>
+                        <th>氏名</th>
+                        <th>年齢</th>
+                        <th>性別</th>
+                        <th>住所</th>
+                        <th>電話番号</th>
+                        <th>メールアドレス</th>
+                        <th>感想</th>
+                    </tr>';
 
         // while文でCSVファイルのデータを1つずつ繰り返し読み込む
         while($data = fgetcsv($fp)){
@@ -118,17 +128,6 @@ function goSearch(){
 
             // 検索条件を取得
             $get = $_GET;
-
-            echo '<table class="result">
-                    <tr>
-                        <th>氏名</th>
-                        <th>年齢</th>
-                        <th>性別</th>
-                        <th>住所</th>
-                        <th>電話番号</th>
-                        <th>メールアドレス</th>
-                        <th>感想</th>
-                    </tr>';
 
             //検索条件がある場合
             if(!empty($get)){
