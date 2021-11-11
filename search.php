@@ -113,6 +113,17 @@ function goSearch(){
             $MAIL = $_GET['mail'];
             $THOUGHTS = $_GET['thoughts'];
 
+            echo '<table class="result">
+                    <tr>
+                        <th>氏名</th>
+                        <th>年齢</th>
+                        <th>性別</th>
+                        <th>住所</th>
+                        <th>電話番号</th>
+                        <th>メールアドレス</th>
+                        <th>感想</th>
+                    </tr>';
+
             // 表示用フラグ
             $flag = True;
 
@@ -180,16 +191,6 @@ function goSearch(){
                 }
                 //表示用フラグがTrueの場合
                 if($flag === True){
-                    echo '<table class="result">
-                    <tr>
-                        <th>氏名</th>
-                        <th>年齢</th>
-                        <th>性別</th>
-                        <th>住所</th>
-                        <th>電話番号</th>
-                        <th>メールアドレス</th>
-                        <th>感想</th>
-                    </tr>';
                     //データ表示
                     echo '<tr>';
                     echo "<td>" . $data[0] . "</td>";
