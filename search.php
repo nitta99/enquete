@@ -113,7 +113,15 @@ function goSearch(){
             $MAIL = $_GET['mail'];
             $THOUGHTS = $_GET['thoughts'];
 
-            echo '<table class="result">
+            // 表示用フラグ
+            $flag = True;
+
+            // 検索条件を取得
+            $get = $_GET;
+
+            //検索条件がある場合
+            if(!empty($get)){
+                echo '<table class="result">
                     <tr>
                         <th>氏名</th>
                         <th>年齢</th>
@@ -123,15 +131,6 @@ function goSearch(){
                         <th>メールアドレス</th>
                         <th>感想</th>
                     </tr>';
-
-            // 表示用フラグ
-            $flag = True;
-
-            // 検索条件を取得
-            $get = $_GET;
-
-            //検索条件がある場合
-            if(!empty($get)){
 
                 //名前が入力されている場合
                 if(empty($NAME) === false){
