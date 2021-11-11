@@ -10,9 +10,6 @@
 function goIndex(){
     location.href="index.php";
 }
-function goSearch(){
-    location.href="search.php";
-}
 </script>
 
 </head>
@@ -192,6 +189,7 @@ function goSearch(){
                 }
                 //表示用フラグがTrueの場合
                 if($flag === True){
+
                     //データ表示
                     echo '<tr>';
                     echo "<td>" . $data[0] . "</td>";

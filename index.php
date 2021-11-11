@@ -56,9 +56,6 @@ function checkTelephone(){
 	}
 }
 //指定ページ遷移
-function goIndex(){
-    location.href="index.php";
-}
 function goSearch(){
     location.href="search.php";
 }
