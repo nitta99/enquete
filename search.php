@@ -119,9 +119,7 @@ function goSearch(){
             // 検索条件を取得
             $get = $_GET;
 
-            //検索条件がある場合
-            if(!empty($get)){
-                echo '<table class="result">
+            echo '<table class="result">
                     <tr>
                         <th>氏名</th>
                         <th>年齢</th>
@@ -131,6 +129,9 @@ function goSearch(){
                         <th>メールアドレス</th>
                         <th>感想</th>
                     </tr>';
+
+            //検索条件がある場合
+            if(!empty($get)){
 
                 //名前が入力されている場合
                 if(empty($NAME) === false){
