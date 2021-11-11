@@ -37,7 +37,7 @@ function goSearch(){
 }
 </script>
 
-<td><input class="navigation" type="button" onclick="goIndex()" value="登録画面"></td><td><input class="navigation" type="button" onclick="goSearch()" value="検索画面"></td>
+<td><button type="button" onclick="goIndex()">登録画面</button></td><td><button type="button" onclick="goSearch()">検索画面</button></td>
 
 </head>
 <body>
