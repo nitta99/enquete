@@ -125,44 +125,129 @@ function goIndex(){
 
         //検索条件がある場合
         if(!empty($get)){
-            $sql ='
-                select *
-                from public.enquete
-                WHERE
-                name LIKE '%".$NAME."%'
-                OR age='.$AGE.'
-                OR gender='.$GENDER .'
-                OR address LIKE '%".$ADDRESS."%'
-                OR telephone LIKE '%".$TELEPHONE."%'
-                OR mail LIKE '%".$MAIL."%'
-                OR thoughts='.$THOUGHTS.'
-            ';
 
-            //表示用フラグがTrueの場合
-            if($flag === True){
-                foreach ($pdo->query($sql) as $data) {
-                    echo '<tr>';
-                    echo "<td>" . $data[0] . "</td>";
-                    echo "<td>" . $data[1] . "</td>";
-                    if($data[2] === "man"){
-                        echo "<td>" . "男性" . "</td>";
-                    }else if($data[2] === "woman"){
-                        echo "<td>" . "女性" . "</td>";
-                    }
-                    echo "<td>" . $data[3] . "</td>";
-                    echo "<td>" . $data[4] . "</td>";
-                    echo "<td>" . $data[5] . "</td>";
-                    if($data[6] === "good"){
-                    echo "<td>" . "良い" . "</td>";
-                    }else if($data[6] === "normal"){
-                    echo "<td>" . "普通" . "</td>";
-                    }else if($data[6] === "bad"){
-                    echo "<td>" . "悪い" . "</td>";
-                    }
-                    echo '</tr>';
+            //名前が入力されている場合
+            if(empty($NAME) === false){
+                //部分一致しない場合
+                if(strpos($data[0], $NAME) === false){
+                    //表示用フラグをfalseに
+                    $flag = false;
                 }
             }
+            //年齢が入力されている場合
+            if(empty($AGE) === false){
+                //完全一致しない場合
+                if($data[1] !== $AGE){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //性別が入力されている場合
+            if(empty($GENDER) === false){
+                //完全一致しない場合
+                if($data[2] !== $GENDER){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //住所が入力されている場合
+            if(empty($ADDRESS) === false){
+                //部分一致しない場合
+                if(strpos($data[3], $ADDRESS) === false){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //電話番号が入力されている場合
+            if(empty($TELEPHONE) === false){
+                //部分一致しない場合
+                if(strpos($data[4], $TELEPHONE) === false){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //メールアドレスが入力されている場合
+            if(empty($MAIL) === false){
+                //部分一致しない場合
+                if(strpos($data[5], $MAIL) === false){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //感想が入力されている場合
+            if(empty($THOUGHTS) === false){
+                //完全一致しない場合
+                if($data[6] !== $THOUGHTS){
+                    //表示用フラグをfalseに
+                    $flag = false;
+                }
+            }
+            //表示用フラグがTrueの場合
+            if($flag === True){
+
+                //データ表示
+                echo '<tr>';
+                echo "<td>" . $data[0] . "</td>";
+                echo "<td>" . $data[1] . "</td>";
+                if($data[2] === "man"){
+                    echo "<td>" . "男性" . "</td>";
+                }else if($data[2] === "woman"){
+                    echo "<td>" . "女性" . "</td>";
+                }
+                echo "<td>" . $data[3] . "</td>";
+                echo "<td>" . $data[4] . "</td>";
+                echo "<td>" . $data[5] . "</td>";
+                if($data[6] === "good"){
+                    echo "<td>" . "良い" . "</td>";
+                }else if($data[6] === "normal"){
+                    echo "<td>" . "普通" . "</td>";
+                }else if($data[6] === "bad"){
+                    echo "<td>" . "悪い" . "</td>";
+                }
+                echo '</tr>';
+            }
         }
+
+        // //検索条件がある場合
+        // if(!empty($get)){
+        //     $sql ='
+        //         select *
+        //         from public.enquete
+        //         WHERE
+        //         name LIKE '%".$NAME."%'
+        //         OR age='.$AGE.'
+        //         OR gender='.$GENDER .'
+        //         OR address LIKE '%".$ADDRESS."%'
+        //         OR telephone LIKE '%".$TELEPHONE."%'
+        //         OR mail LIKE '%".$MAIL."%'
+        //         OR thoughts='.$THOUGHTS.'
+        //     ';
+
+        //     //表示用フラグがTrueの場合
+        //     if($flag === True){
+        //         foreach ($pdo->query($sql) as $data) {
+        //             echo '<tr>';
+        //             echo "<td>" . $data[0] . "</td>";
+        //             echo "<td>" . $data[1] . "</td>";
+        //             if($data[2] === "man"){
+        //                 echo "<td>" . "男性" . "</td>";
+        //             }else if($data[2] === "woman"){
+        //                 echo "<td>" . "女性" . "</td>";
+        //             }
+        //             echo "<td>" . $data[3] . "</td>";
+        //             echo "<td>" . $data[4] . "</td>";
+        //             echo "<td>" . $data[5] . "</td>";
+        //             if($data[6] === "good"){
+        //             echo "<td>" . "良い" . "</td>";
+        //             }else if($data[6] === "normal"){
+        //             echo "<td>" . "普通" . "</td>";
+        //             }else if($data[6] === "bad"){
+        //             echo "<td>" . "悪い" . "</td>";
+        //             }
+        //             echo '</tr>';
+        //         }
+        //     }
+        // }
         // テーブルの閉じタグ
         echo '</table>';
     ?>
