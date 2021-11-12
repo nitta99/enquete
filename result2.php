@@ -1,7 +1,7 @@
 <?php
-
-// 書き込み対象のCSVファイルを開く
-$fp = fopen("data.csv", "a");
+$url = parse_url(getenv('postgres://ucfigvckstbiea:cab8e82f97856cbd7775f3bc2adb65aae4513b2b2169d511a6db24d48d460f36@ec2-52-21-153-207.compute-1.amazonaws.com:5432/d8p2kl1nnfbvpb'));
+$dsn = sprintf('pgsql:host=%s;dbname=%s', $url['ec2-52-21-153-207.compute-1.amazonaws.com'], substr($url['d8p2kl1nnfbvpb'], 1));
+$pdo = new PDO($dsn, $url['ucfigvckstbiea'], $url['cab8e82f97856cbd7775f3bc2adb65aae4513b2b2169d511a6db24d48d460f36']);
 
 $NAME = $_POST['name'];
 $AGE = $_POST['age'];
@@ -11,14 +11,10 @@ $TELEPHONE = $_POST['telephone'];
 $MAIL = $_POST['mail'];
 $THOUGHTS = $_POST['thoughts'];
 
-//ストリームフィルタ指定
-stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
+$sql = "INSERT INTO public.enquete VALUES ($NAME, $AGE, $GENDER, $ADDRESS, $TELEPHONE, $MAIL, $THOUGHTS);";
+$pdo->exec ($sql);
 
-// CSVファイルに書き込む
-fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
 
-// 書き込み対象のファイルをクローズ
-fclose($fp);
 ?>
 <!doctype html>
 <html>
