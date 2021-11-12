@@ -117,8 +117,8 @@ function goIndex(){
         $MAIL = $_GET['mail'];
         $THOUGHTS = $_GET['thoughts'];
 
-        // 検索条件を取得
-        $get = $_GET;
+        // // 検索条件を取得
+        // $get = $_GET;
 
         //検索条件がある場合
         // if($NAME != "" OR $AGE != "" OR $GENDER != "" OR $ADDRESS != "" OR $TELEPHONE != "" OR $MAIL != "" OR $THOUGHTS != ""){
