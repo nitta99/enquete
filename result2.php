@@ -11,8 +11,10 @@ $TELEPHONE = $_POST['telephone'];
 $MAIL = $_POST['mail'];
 $THOUGHTS = $_POST['thoughts'];
 
-$sql = "INSERT INTO public.enquete VALUES ($NAME, $AGE, $GENDER, $ADDRESS, $TELEPHONE, $MAIL, $THOUGHTS);";
-$pdo->exec ($sql);
+$sql = "INSERT INTO public.enquete (name, age, gender, address, telephone, mail, thoughts) VALUES (:name, :age, :gender, :address, :telephone, :mail, :thoughts)";
+$stmt = $dbh->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
+$params = array(':name' => $name, ':age' => $AGE, ':gender' => $GENDER, ':address' => $ADDRESS,  ':telephone' => $TELEPHONE,  ':mail' => $MAIL,  ':thoughts' => $THOUGHTS,); // 挿入する値を配列に格納する
+$stmt->exec ($params);
 
 
 ?>
