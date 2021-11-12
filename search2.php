@@ -109,13 +109,13 @@ function goIndex(){
         $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
         $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-        $NAME = $_GET['name'];
-        $AGE = $_GET['age'];
-        $GENDER = $_GET['gender'];
-        $ADDRESS = $_GET['address'];
-        $TELEPHONE = $_GET['telephone'];
-        $MAIL = $_GET['mail'];
-        $THOUGHTS = $_GET['thoughts'];
+        // $NAME = $_GET['name'];
+        // $AGE = $_GET['age'];
+        // $GENDER = $_GET['gender'];
+        // $ADDRESS = $_GET['address'];
+        // $TELEPHONE = $_GET['telephone'];
+        // $MAIL = $_GET['mail'];
+        // $THOUGHTS = $_GET['thoughts'];
 
         // // 検索条件を取得
         // $get = $_GET;
