@@ -1,7 +1,8 @@
 <?php
-$url = parse_url(getenv('postgres://ucfigvckstbiea:cab8e82f97856cbd7775f3bc2adb65aae4513b2b2169d511a6db24d48d460f36@ec2-52-21-153-207.compute-1.amazonaws.com:5432/d8p2kl1nnfbvpb'));
-$dsn = sprintf('pgsql:host=%s;dbname=%s', $url['ec2-52-21-153-207.compute-1.amazonaws.com'], substr($url['d8p2kl1nnfbvpb'], 1));
-$pdo = new PDO($dsn, $url['ucfigvckstbiea'], $url['cab8e82f97856cbd7775f3bc2adb65aae4513b2b2169d511a6db24d48d460f36']);
+
+$url = parse_url(getenv('DATABASE_URL'));
+$dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
+$pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 $NAME = $_POST['name'];
 $AGE = $_POST['age'];
@@ -15,7 +16,6 @@ $sql = "INSERT INTO public.enquete (name, age, gender, address, telephone, mail,
 $stmt = $dbh->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
 $params = array(':name' => $name, ':age' => $AGE, ':gender' => $GENDER, ':address' => $ADDRESS,  ':telephone' => $TELEPHONE,  ':mail' => $MAIL,  ':thoughts' => $THOUGHTS,); // 挿入する値を配列に格納する
 $stmt->exec ($params);
-
 
 ?>
 <!doctype html>
