@@ -117,8 +117,6 @@ function goIndex(){
         $MAIL = $_GET['mail'];
         $THOUGHTS = $_GET['thoughts'];
 
-        $sql ='select * from public.enquete';
-
         // 表示用フラグ
         $flag = True;
 
@@ -127,6 +125,7 @@ function goIndex(){
 
         //検索条件がある場合
         if(!empty($get)){
+            $sql ='select * from public.enquete';
 
             //名前が入力されている場合
             if(empty($NAME) === false){
