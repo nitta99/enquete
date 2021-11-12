@@ -121,17 +121,10 @@ function goIndex(){
         $get = $_GET;
 
         //検索条件がある場合
-        if($NAME != "" OR $AGE != "" OR $GENDER != "" OR $ADDRESS != "" OR $TELEPHONE != "" OR $MAIL != "" OR $THOUGHTS != ""){
+        // if($NAME != "" OR $AGE != "" OR $GENDER != "" OR $ADDRESS != "" OR $TELEPHONE != "" OR $MAIL != "" OR $THOUGHTS != ""){
             $sql ='
             select *
             from public.enquete
-            where name like '%".$NAME."%'
-            or age='.$AGE.'
-            or gender='.$GENDER.'
-            or address like '%".$ADDRESS."%'
-            or telephone like '%".$TELEPHONE."%'
-            or mail like '%".$MAIL."%'
-            or thoughts='.$THOUGHTS.'
             ';
 
             foreach ($pdo->query($sql) as $data) {
@@ -155,7 +148,7 @@ function goIndex(){
                 }
                 echo '</tr>';
             }
-        }
+        //}
 
 
         // //検索条件がある場合
