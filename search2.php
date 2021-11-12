@@ -120,12 +120,12 @@ function goIndex(){
         // 表示用フラグ
         $flag = True;
 
-            $sql ='
+            //表示用フラグがTrueの場合
+            if($flag === True){
+                $sql ='
             select *
             from public.enquete
             ';
-            //表示用フラグがTrueの場合
-            if($flag === True){
             foreach ($pdo->query($sql) as $data) {
                 echo '<tr>';
                 echo "<td>" . $data[0] . "</td>";
