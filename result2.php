@@ -12,7 +12,7 @@ $TELEPHONE = $_POST['telephone'];
 $MAIL = $_POST['mail'];
 $THOUGHTS = $_POST['thoughts'];
 
-$sql = "INSERT INTO public.enquete VALUES ($NAME, $AGE, $GENDER, $ADDRESS, $TELEPHONE, $MAIL, $THOUGHTS);";
+$sql = "INSERT INTO public.enquete VALUES ('$NAME', '$AGE', '$GENDER', '$ADDRESS', '$TELEPHONE', '$MAIL', '$THOUGHTS');";
 $pdo->exec ($sql);
 
 // $sql = "INSERT INTO public.enquete (name, age, gender, address, telephone, mail, thoughts) VALUES (:name, :age, :gender, :address, :telephone, :mail, :thoughts)";
