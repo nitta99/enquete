@@ -117,36 +117,28 @@ function goIndex(){
         // $MAIL = $_GET['mail'];
         // $THOUGHTS = $_GET['thoughts'];
 
-        // 表示用フラグ
-        $flag = True;
-
-            //表示用フラグがTrueの場合
-            if($flag === True){
-                $sql ='
-            select *
-            from public.enquete
-            ';
-            foreach ($pdo->query($sql) as $data) {
-                echo '<tr>';
-                echo "<td>" . $data[0] . "</td>";
-                echo "<td>" . $data[1] . "</td>";
-                if($data[2] === "man"){
+        $sql = 'select * from public.enquete';
+        foreach ($pdo->query($sql) as $data) {
+            //データ表示
+            echo '<tr>';
+            echo "<td>" . $data[0] . "</td>";
+            echo "<td>" . $data[1] . "</td>";
+            if($data[2] === "man"){
                 echo "<td>" . "男性" . "</td>";
-                }else if($data[2] === "woman"){
+            }else if($data[2] === "woman"){
                 echo "<td>" . "女性" . "</td>";
-                }
-                echo "<td>" . $data[3] . "</td>";
-                echo "<td>" . $data[4] . "</td>";
-                echo "<td>" . $data[5] . "</td>";
-                if($data[6] === "good"){
-                echo "<td>" . "良い" . "</td>";
-                }else if($data[6] === "normal"){
-                echo "<td>" . "普通" . "</td>";
-                }else if($data[6] === "bad"){
-                echo "<td>" . "悪い" . "</td>";
-                }
-                echo '</tr>';
             }
+            echo "<td>" . $data[3] . "</td>";
+            echo "<td>" . $data[4] . "</td>";
+            echo "<td>" . $data[5] . "</td>";
+            if($data[6] === "good"){
+                echo "<td>" . "良い" . "</td>";
+            }else if($data[6] === "normal"){
+                echo "<td>" . "普通" . "</td>";
+            }else if($data[6] === "bad"){
+                echo "<td>" . "悪い" . "</td>";
+            }
+            echo '</tr>';
         }
         // テーブルの閉じタグ
         echo '</table>';
