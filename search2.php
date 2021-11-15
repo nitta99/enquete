@@ -117,7 +117,11 @@ function goIndex(){
         // $MAIL = $_GET['mail'];
         // $THOUGHTS = $_GET['thoughts'];
 
+        // 表示用フラグ
+        $flag = True;
+
         $sql = 'select * from public.enquete';
+        if($flag === True){
         foreach ($pdo->query($sql) as $data) {
             //データ表示
             echo '<tr>';
@@ -139,6 +143,7 @@ function goIndex(){
                 echo "<td>" . "悪い" . "</td>";
             }
             echo '</tr>';
+        }
         }
         // テーブルの閉じタグ
         echo '</table>';
