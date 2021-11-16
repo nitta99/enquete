@@ -111,25 +111,25 @@ function goIndex(){
 
     // 名前の条件が指定されたら
     if (empty($NAME) === false) {
-        $query = $query + " AND name LIKE '%%' ";
+        $query .= " AND name LIKE '%%' ";
     // 年齢〃
     }else if (empty($AGE) === false) {
-        $query = $query + " AND age='' ";
+        $query .= " AND age='' ";
     // 性別〃
     }else if (empty($GENDER) === false) {
-        $query = $query + " AND gender='' ";
+        $query .= " AND gender='' ";
     // 住所〃
     }else if (empty($ADDRESS) === false) {
-        $query = $query + " AND address LIKE '%%' ";
+        $query .= " AND address LIKE '%%' ";
     // 電話番号〃
     }else if (empty($TELEPHONE) === false) {
-        $query = $query + " AND telephone LIKE '%%' ";
+        $query .= " AND telephone LIKE '%%' ";
     // メールアドレス〃
     }else if (empty($MAIL) === false) {
-        $query = $query + " AND mail LIKE '%%' ";
+        $query .= " AND mail LIKE '%%' ";
     // 感想〃
     }else if (empty($THOUGHTS) === false) {
-        $query = $query + " AND thoughts='' ";
+        $query .= " AND thoughts='' ";
     }
 
     $stmt = $pdo->query($query);
