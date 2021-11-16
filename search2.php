@@ -145,8 +145,7 @@ function goIndex(){
                 <th>電話番号</th>
                 <th>メールアドレス</th>
                 <th>感想</th>
-            </tr>';
-        <?php endif; ?>
+            </tr>
         <?php foreach ($stmt as $data): ?>
             <tr>
                 <td><?php echo $data[0]?></td>
@@ -171,6 +170,7 @@ function goIndex(){
                 <?PHP endif; ?>
             </tr>
         <?php endforeach; ?>
+        <?php endif; ?>
     </table>
 </body>
 </html>
