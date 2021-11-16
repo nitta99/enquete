@@ -109,8 +109,15 @@ function goIndex(){
     // 基本検索条件（全件検索）
     $query = "SELECT * FROM public.enquete WHERE 1 = 1";
 
+    // 表示用フラグ
+    $flag = True;
+
+    // 検索条件を取得
+    $get = $_GET;
+
+    if(!empty($get)){
     // 名前の条件が指定されたら
-    if ($NAME) {
+    if (empty($NAME) === false) {
         $query .= " AND name LIKE '%%' ";
     // 年齢〃
     }else if (empty($AGE) === false) {
@@ -133,7 +140,7 @@ function goIndex(){
     }
 
     $stmt = $pdo->query($query);
-
+    }
     ?>
     <table class="result">
         <?php if (isset($_GET['search'])): ?>
@@ -146,30 +153,32 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
-        <?php foreach ($stmt as $data): ?>
-            <tr>
-                <td><?php echo $data[0]?></td>
-                <td><?php echo $data[1]?></td>
-                <?php if($data[2] === "man"): ?>
-                    <td><?php echo "男性"?></td>
-                <?PHP endif; ?>
-                <?php if($data[2] === "woman"): ?>
-                    <td><?php echo "女性"?></td>
-                <?PHP endif; ?>
-                <td><?php echo $data[3]?></td>
-                <td><?php echo $data[4]?></td>
-                <td><?php echo $data[5]?></td>
-                <?php if($data[6] === "good"): ?>
-                    <td><?php echo "良い"?></td>
-                <?PHP endif; ?>
-                <?php if($data[6] === "normal"): ?>
-                    <td><?php echo "普通"?></td>
-                <?PHP endif; ?>
-                <?php if($data[6] === "bad"): ?>
-                    <td><?php echo "悪い"?></td>
-                <?PHP endif; ?>
-            </tr>
-        <?php endforeach; ?>
+        <?php if($flag === True):?>
+            <?php foreach ($stmt as $data): ?>
+                <tr>
+                    <td><?php echo $data[0]?></td>
+                    <td><?php echo $data[1]?></td>
+                    <?php if($data[2] === "man"): ?>
+                        <td><?php echo "男性"?></td>
+                    <?PHP endif; ?>
+                    <?php if($data[2] === "woman"): ?>
+                        <td><?php echo "女性"?></td>
+                    <?PHP endif; ?>
+                    <td><?php echo $data[3]?></td>
+                    <td><?php echo $data[4]?></td>
+                    <td><?php echo $data[5]?></td>
+                    <?php if($data[6] === "good"): ?>
+                        <td><?php echo "良い"?></td>
+                    <?PHP endif; ?>
+                    <?php if($data[6] === "normal"): ?>
+                        <td><?php echo "普通"?></td>
+                    <?PHP endif; ?>
+                    <?php if($data[6] === "bad"): ?>
+                        <td><?php echo "悪い"?></td>
+                    <?PHP endif; ?>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <?php endif; ?>
     </table>
 </body>
