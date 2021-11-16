@@ -129,7 +129,7 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>';
-        <?php foreach ($pdo->query($sql) as $data): ?>
+        <?php foreach ($stmt as $data): ?>
             <tr>
                 <td><?php echo $data[0]?></td>
                 <td><?php echo $data[1]?></td>
