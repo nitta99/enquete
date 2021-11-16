@@ -118,25 +118,53 @@ function goIndex(){
     if(!empty($get)){
     // 名前の条件が指定されたら
     if (empty($NAME) === false) {
-        $query .= " AND name LIKE '%%' ";
+        if(strpos($data[0], $NAME) === false){
+            $query .= " AND name LIKE '%%' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // 年齢〃
     }else if (empty($AGE) === false) {
-        $query .= " AND age='' ";
+        if($data[1] !== $AGE){
+            $query .= " AND age='' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // 性別〃
     }else if (empty($GENDER) === false) {
-        $query .= " AND gender='' ";
+        if($data[2] !== $GENDER){
+            $query .= " AND gender='' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // 住所〃
     }else if (empty($ADDRESS) === false) {
-        $query .= " AND address LIKE '%%' ";
+        if(strpos($data[3], $ADDRESS) === false){
+            $query .= " AND address LIKE '%%' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // 電話番号〃
     }else if (empty($TELEPHONE) === false) {
-        $query .= " AND telephone LIKE '%%' ";
+        if(strpos($data[4], $TELEPHONE) === false){
+            $query .= " AND telephone LIKE '%%' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // メールアドレス〃
     }else if (empty($MAIL) === false) {
-        $query .= " AND mail LIKE '%%' ";
+        if(strpos($data[5], $MAIL) === false){
+            $query .= " AND mail LIKE '%%' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     // 感想〃
     }else if (empty($THOUGHTS) === false) {
-        $query .= " AND thoughts='' ";
+        if($data[6] !== $THOUGHTS){
+            $query .= " AND thoughts='' ";
+            //表示用フラグをfalseに
+            $flag = false;
+        }
     }
 
     $stmt = $pdo->query($query);
