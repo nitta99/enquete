@@ -118,13 +118,13 @@ function goIndex(){
     if(!empty($get)){
     // 名前の条件が指定されたら
     if ($NAME) {
-        $query .= " AND name LIKE '%%' ";
+        $query .= ' AND name LIKE :name';
     // 年齢〃
     }else if ($AGE) {
-        $query .= " AND age=$AGE ";
+        $query .= " AND age='' ";
     // 性別〃
     }else if ($GENDER) {
-        $query .= " AND gender=$GENDER ";
+        $query .= " AND gender='' ";
     // 住所〃
     }else if ($ADDRESS) {
         $query .= " AND address LIKE '%%' ";
@@ -136,7 +136,7 @@ function goIndex(){
         $query .= " AND mail LIKE '%%' ";
     // 感想〃
     }else if ($THOUGHTS) {
-        $query .= " AND thoughts=$THOUGHTS ";
+        $query .= " AND thoughts='' ";
     }
 
     $stmt = $pdo->query($query);
