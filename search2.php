@@ -1,3 +1,11 @@
+<?php
+    $url = parse_url(getenv('DATABASE_URL'));
+    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
+    $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+    $sql = 'select * from public.enquete';
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -105,19 +113,7 @@ function goIndex(){
                     <th>感想</th>
                 </tr>';
         }
-        $url = parse_url(getenv('DATABASE_URL'));
-        $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
-        $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-        // $NAME = $_GET['name'];
-        // $AGE = $_GET['age'];
-        // $GENDER = $_GET['gender'];
-        // $ADDRESS = $_GET['address'];
-        // $TELEPHONE = $_GET['telephone'];
-        // $MAIL = $_GET['mail'];
-        // $THOUGHTS = $_GET['thoughts'];
-
-        $sql = 'select * from public.enquete';
         foreach ($pdo->query($sql) as $data) {
             //データ表示
             echo '<tr>';
