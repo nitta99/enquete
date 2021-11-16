@@ -145,7 +145,7 @@ function goIndex(){
                 <?php if($data[6] === "good"): ?>
                     <td><?php echo "良い"?></td>
                 <?PHP endif; ?>
-                <?php if($data[6] === "nomal"): ?>
+                <?php if($data[6] === "normal"): ?>
                     <td><?php echo "普通"?></td>
                 <?PHP endif; ?>
                 <?php if($data[6] === "bad"): ?>
