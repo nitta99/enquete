@@ -104,17 +104,19 @@ function goIndex(){
     if(!empty($get)){
 
         //SQL文を実行して、結果を$stmtに代入する。
-        $stmt = $pdo->query(
-            "SELECT *
-            FROM public.enquete
-            WHERE name LIKE  '%".$_GET["name"]."%'
-            OR age='".$_GET["age"] ."'
-            OR gender='".$_GET["gender"] ."'
-            OR address LIKE  '%".$_GET["address"]."%'
-            OR telephone LIKE  '%".$_GET["telephone"]."%'
-            OR mail LIKE  '%".$_GET["mail"]."%'
-            OR thoughts='".$_GET["thoughts"] ."'
-            ");
+
+$query = "SELECT *
+    FROM public.enquete
+    WHERE name LIKE  '%".$_GET["name"]."%'
+    OR age='".$_GET["age"] ."'
+    OR gender='".$_GET["gender"] ."'
+    OR address LIKE  '%".$_GET["address"]."%'
+    OR telephone LIKE  '%".$_GET["telephone"]."%'
+    OR mail LIKE  '%".$_GET["mail"]."%'
+    OR thoughts='".$_GET["thoughts"] ."'";
+echo $query;
+$stmt = $pdo->query($query);
+
         }
 
     ?>
