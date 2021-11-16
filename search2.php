@@ -116,23 +116,29 @@ function goIndex(){
     // 名前の条件が指定されたら
     if ($NAME) {
         $query .= " AND name LIKE '%%' ";
+    }
     // 年齢　　〃
-    }else if ($AGE) {
+    if ($AGE) {
         $query .= " AND age='' ";
+    }
     // 性別　　〃
-    }else if ($GENDER) {
+    if ($GENDER) {
         $query .= " AND gender='' ";
+    }
     // 住所　　〃
-    }else if ($ADDRESS) {
+    if ($ADDRESS) {
         $query .= " AND address LIKE '%%' ";
+    }
     // 電話番号　　〃
-    }else if ($TELEPHONE) {
+    if ($TELEPHONE) {
         $query .= " AND telephone LIKE '%%' ";
+    }
     // メールアドレス　　〃
-    }else if ($MAIL) {
+    if ($MAIL) {
         $query .= " AND mail LIKE '%%' ";
+    }
     // 感想　　〃
-    }else if ($THOUGHTS) {
+    if ($THOUGHTS) {
         $query .= " AND thoughts='' ";
     }
 
