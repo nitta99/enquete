@@ -112,7 +112,7 @@ function goIndex(){
                     <th>メールアドレス</th>
                     <th>感想</th>
                 </tr>';
-        }
+
 
         foreach ($pdo->query($sql) as $data) {
             //データ表示
@@ -138,6 +138,7 @@ function goIndex(){
         }
         // テーブルの閉じタグ
         echo '</table>';
+        }
     ?>
 </body>
 </html>
