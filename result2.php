@@ -1,20 +1,18 @@
 <?php
+    $url = parse_url(getenv('DATABASE_URL'));
+    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
+    $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-$url = parse_url(getenv('DATABASE_URL'));
-$dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
-$pdo = new PDO($dsn, $url['user'], $url['pass']);
+    $NAME = $_POST['name'];
+    $AGE = $_POST['age'];
+    $GENDER = $_POST['gender'];
+    $ADDRESS = $_POST['address'];
+    $TELEPHONE = $_POST['telephone'];
+    $MAIL = $_POST['mail'];
+    $THOUGHTS = $_POST['thoughts'];
 
-$NAME = $_POST['name'];
-$AGE = $_POST['age'];
-$GENDER = $_POST['gender'];
-$ADDRESS = $_POST['address'];
-$TELEPHONE = $_POST['telephone'];
-$MAIL = $_POST['mail'];
-$THOUGHTS = $_POST['thoughts'];
-
-$sql = "INSERT INTO public.enquete VALUES ('$NAME', '$AGE', '$GENDER', '$ADDRESS', '$TELEPHONE', '$MAIL', '$THOUGHTS');";
-$pdo->exec ($sql);
-
+    $sql = "INSERT INTO public.enquete VALUES ('$NAME', '$AGE', '$GENDER', '$ADDRESS', '$TELEPHONE', '$MAIL', '$THOUGHTS');";
+    $pdo->exec ($sql);
 ?>
 <!doctype html>
 <html>

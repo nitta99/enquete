@@ -3,7 +3,22 @@
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
     $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-    $sql = 'select * from public.enquete';
+     //IDおよびユーザー名の入力有無を確認
+    if(@$_GET["name"] != "" OR @$_GET["age"] != "" OR @$_GET["gender"] != "" OR @$_GET["address"] != ""
+        OR @$_GET["telephone"] != "" OR @$_GET["mail"] != "" OR @$_GET["thoughts"] != ""){
+
+        $stmt = $pdo->query(
+            "SELECT *
+            FROM public.enquete
+            WHERE name LIKE  '%".$_GET["name"]."%'
+            OR age='".$_GET["age"] ."'
+            OR gender='".$_GET["gender"] ."'
+            OR address LIKE  '%".$_GET["address"]."%'
+            OR telephone LIKE  '%".$_GET["telephone"]."%'
+            OR mail LIKE  '%".$_GET["mail"]."%'
+            OR thoughts='".$_GET["thoughts"] ."'
+            "); //SQL文を実行して、結果を$stmtに代入する。
+    }
 ?>
 
 <!doctype html>
@@ -114,30 +129,30 @@ function goIndex(){
                 </tr>';
 
 
-        foreach ($pdo->query($sql) as $data) {
-            //データ表示
-            echo '<tr>';
-            echo "<td>" . $data[0] . "</td>";
-            echo "<td>" . $data[1] . "</td>";
-            if($data[2] === "man"){
-                echo "<td>" . "男性" . "</td>";
-            }else if($data[2] === "woman"){
-                echo "<td>" . "女性" . "</td>";
+            foreach ($stmt as $data) {
+                //データ表示
+                echo '<tr>';
+                echo "<td>" . $data[0] . "</td>";
+                echo "<td>" . $data[1] . "</td>";
+                if($data[2] === "man"){
+                    echo "<td>" . "男性" . "</td>";
+                }else if($data[2] === "woman"){
+                    echo "<td>" . "女性" . "</td>";
+                }
+                echo "<td>" . $data[3] . "</td>";
+                echo "<td>" . $data[4] . "</td>";
+                echo "<td>" . $data[5] . "</td>";
+                if($data[6] === "good"){
+                    echo "<td>" . "良い" . "</td>";
+                }else if($data[6] === "normal"){
+                    echo "<td>" . "普通" . "</td>";
+                }else if($data[6] === "bad"){
+                    echo "<td>" . "悪い" . "</td>";
+                }
+                echo '</tr>';
             }
-            echo "<td>" . $data[3] . "</td>";
-            echo "<td>" . $data[4] . "</td>";
-            echo "<td>" . $data[5] . "</td>";
-            if($data[6] === "good"){
-                echo "<td>" . "良い" . "</td>";
-            }else if($data[6] === "normal"){
-                echo "<td>" . "普通" . "</td>";
-            }else if($data[6] === "bad"){
-                echo "<td>" . "悪い" . "</td>";
-            }
-            echo '</tr>';
-        }
-        // テーブルの閉じタグ
-        echo '</table>';
+            // テーブルの閉じタグ
+            echo '</table>';
         }
     ?>
 </body>
