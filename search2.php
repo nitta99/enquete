@@ -115,7 +115,7 @@ function goIndex(){
     if(!empty($get)){
     // 名前の条件が指定されたら
     if ($NAME) {
-        $query .= sprintf(" AND name LIKE '%s%'", $NAME);
+        $query .= sprintf(" AND name LIKE '%s' ", $NAME);
     }
     // 年齢　　〃
     if ($AGE) {
@@ -127,15 +127,15 @@ function goIndex(){
     }
     // 住所　　〃
     if ($ADDRESS) {
-        $query .= sprintf(" AND address LIKE '%s%'", $ADDRESS);
+        $query .= sprintf(" AND address LIKE '%s' ", $ADDRESS);
     }
     // 電話番号　　〃
     if ($TELEPHONE) {
-        $query .= sprintf(" AND telephone LIKE '%s%'", $TELEPHONE);
+        $query .= sprintf(" AND telephone LIKE '%s' ", $TELEPHONE);
     }
     // メールアドレス　　〃
     if ($MAIL) {
-        $query .= sprintf(" AND mail LIKE '%s%'", $MAIL);
+        $query .= sprintf(" AND mail LIKE '%s' ", $MAIL);
     }
     // 感想　　〃
     if ($THOUGHTS) {
