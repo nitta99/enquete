@@ -93,31 +93,46 @@ function goIndex(){
         </form>
     </div>
     <?php
+
     $url = parse_url(getenv('DATABASE_URL'));
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
     $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-    // 検索条件を取得
-    $get = $_GET;
+    $NAME = $_GET['name'];
+    $AGE = $_GET['age'];
+    $GENDER = $_GET['gender'];
+    $ADDRESS = $_GET['address'];
+    $TELEPHONE = $_GET['telephone'];
+    $MAIL = $_GET['mail'];
+    $THOUGHTS = $_GET['thoughts'];
 
-    //IDおよびユーザー名の入力有無を確認
-    if(!empty($get)){
+    // 基本検索条件（全件検索）
+    $query = "SELECT * FROM public.enquete WHERE 1 = 1";
 
-        //SQL文を実行して、結果を$stmtに代入する。
+    // 名前の条件が指定されたら
+    if (empty($NAME) === false) {
+        $query = $query + " AND name LIKE '%%' ";
+    // 年齢〃
+    }else if (empty($AGE) === false) {
+        $query = $query + " AND age='' ";
+    // 性別〃
+    }else if (empty($GENDER) === false) {
+        $query = $query + " AND gender='' ";
+    // 住所〃
+    }else if (empty($ADDRESS) === false) {
+        $query = $query + " AND address LIKE '%%' ";
+    // 電話番号〃
+    }else if (empty($TELEPHONE) === false) {
+        $query = $query + " AND telephone LIKE '%%' ";
+    // メールアドレス〃
+    }else if (empty($MAIL) === false) {
+        $query = $query + " AND mail LIKE '%%' ";
+    // 感想〃
+    }else if (empty($THOUGHTS) === false) {
+        $query = $query + " AND thoughts='' ";
+    }
 
-$query = "SELECT *
-    FROM public.enquete
-    WHERE name LIKE  '%".$_GET["name"]."%'
-    OR age='".$_GET["age"] ."'
-    OR gender='".$_GET["gender"] ."'
-    OR address LIKE  '%".$_GET["address"]."%'
-    OR telephone LIKE  '%".$_GET["telephone"]."%'
-    OR mail LIKE  '%".$_GET["mail"]."%'
-    OR thoughts='".$_GET["thoughts"] ."'";
-echo $query;
-$stmt = $pdo->query($query);
-
-        }
+    $stmt = $pdo->query($query);
 
     ?>
     <table class="result">
