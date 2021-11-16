@@ -109,32 +109,29 @@ function goIndex(){
     // 基本検索条件（全件検索）
     $query = "SELECT * FROM public.enquete WHERE 1 = 1";
 
-    // 表示用フラグ
-    $flag = True;
-
     // 検索条件を取得
     $get = $_GET;
 
     if(!empty($get)){
     // 名前の条件が指定されたら
     if ($NAME) {
-        $query .= ' AND name LIKE :name';
-    // 年齢〃
+        $query .= " AND name LIKE '%%' ";
+    // 年齢　　〃
     }else if ($AGE) {
         $query .= " AND age='' ";
-    // 性別〃
+    // 性別　　〃
     }else if ($GENDER) {
         $query .= " AND gender='' ";
-    // 住所〃
+    // 住所　　〃
     }else if ($ADDRESS) {
         $query .= " AND address LIKE '%%' ";
-    // 電話番号〃
+    // 電話番号　　〃
     }else if ($TELEPHONE) {
         $query .= " AND telephone LIKE '%%' ";
-    // メールアドレス〃
+    // メールアドレス　　〃
     }else if ($MAIL) {
         $query .= " AND mail LIKE '%%' ";
-    // 感想〃
+    // 感想　　〃
     }else if ($THOUGHTS) {
         $query .= " AND thoughts='' ";
     }
@@ -153,7 +150,6 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
-        <?php if($flag === True):?>
             <?php foreach ($stmt as $data): ?>
                 <tr>
                     <td><?php echo $data[0]?></td>
@@ -178,7 +174,6 @@ function goIndex(){
                     <?PHP endif; ?>
                 </tr>
             <?php endforeach; ?>
-        <?php endif; ?>
         <?php endif; ?>
     </table>
 </body>
