@@ -1,30 +1,3 @@
-<?php
-    $url = parse_url(getenv('DATABASE_URL'));
-    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
-    $pdo = new PDO($dsn, $url['user'], $url['pass']);
-    // 表示用フラグ
-    $flag = True;
-
-    // 検索条件を取得
-    $get = $_GET;
-
-    //IDおよびユーザー名の入力有無を確認
-    if(!empty($get)){
-
-        $stmt = $pdo->query(
-            "SELECT *
-            FROM public.enquete
-            WHERE name LIKE  '%".$_GET["name"]."%'
-            OR age='".$_GET["age"] ."'
-            OR gender='".$_GET["gender"] ."'
-            OR address LIKE  '%".$_GET["address"]."%'
-            OR telephone LIKE  '%".$_GET["telephone"]."%'
-            OR mail LIKE  '%".$_GET["mail"]."%'
-            OR thoughts='".$_GET["thoughts"] ."'
-            "); //SQL文を実行して、結果を$stmtに代入する。
-    }
-?>
-
 <!doctype html>
 <html>
 <head>
