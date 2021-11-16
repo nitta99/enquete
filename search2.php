@@ -96,8 +96,6 @@ function goIndex(){
     $url = parse_url(getenv('DATABASE_URL'));
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
     $pdo = new PDO($dsn, $url['user'], $url['pass']);
-    // 表示用フラグ
-    $flag = True;
 
     // 検索条件を取得
     $get = $_GET;
