@@ -130,7 +130,7 @@ function goIndex(){
         $query .= " AND telephone LIKE '%%' ";
     // メールアドレス　　〃
     }else if ($MAIL) {
-        $query .= " AND mail LIKE '%%@%%' ";
+        $query .= " AND mail LIKE '%%' ";
     // 感想　　〃
     }else if ($THOUGHTS) {
         $query .= " AND thoughts='' ";
