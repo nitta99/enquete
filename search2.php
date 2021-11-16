@@ -92,8 +92,34 @@ function goIndex(){
                 </tr>
         </form>
     </div>
+    <?php
+    $url = parse_url(getenv('DATABASE_URL'));
+    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
+    $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+    // // 検索条件を取得
+    // $get = $_GET;
+
+    // //IDおよびユーザー名の入力有無を確認
+    // if(!empty($get)){
+
+    //     //SQL文を実行して、結果を$stmtに代入する。
+    //     $stmt = $pdo->query(
+    //         "SELECT *
+    //         FROM public.enquete
+    //         WHERE name LIKE  '%".$_GET["name"]."%'
+    //         OR age='".$_GET["age"] ."'
+    //         OR gender='".$_GET["gender"] ."'
+    //         OR address LIKE  '%".$_GET["address"]."%'
+    //         OR telephone LIKE  '%".$_GET["telephone"]."%'
+    //         OR mail LIKE  '%".$_GET["mail"]."%'
+    //         OR thoughts='".$_GET["thoughts"] ."'
+    //         ");
+    //     }
+    $sql = 'select * from public.enquete';
+    ?>
     <table class="result">
-    <?php if (isset($_GET['search'])): ?>
+        <?php if (isset($_GET['search'])): ?>
             <tr>
                 <th>氏名</th>
                 <th>年齢</th>
@@ -103,56 +129,31 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>';
-    <?php endif; ?>
+        <?php endif; ?>
+        <?php foreach ($pdo->query($sql) as $data): ?>
+            <tr>
+                <td><?php echo $data[0]?></td>
+                <td><?php echo $data[1]?></td>
+                <?php if($data[2] === "man"): ?>
+                    <td><?php echo "男性"?></td>
+                <?PHP endif; ?>
+                <?php if($data[2] === "woman"): ?>
+                    <td><?php echo "女性"?></td>
+                <?PHP endif; ?>
+                <td><?php echo $data[3]?></td>
+                <td><?php echo $data[4]?></td>
+                <td><?php echo $data[5]?></td>
+                <?php if($data[6] === "good"): ?>
+                    <td><?php echo "良い"?></td>
+                <?PHP endif; ?>
+                <?php if($data[6] === "nomal"): ?>
+                    <td><?php echo "普通"?></td>
+                <?PHP endif; ?>
+                <?php if($data[6] === "bad"): ?>
+                    <td><?php echo "悪い"?></td>
+                <?PHP endif; ?>
+            </tr>
+        <?php endforeach; ?>
     </table>
-    <?php
-    $url = parse_url(getenv('DATABASE_URL'));
-    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
-    $pdo = new PDO($dsn, $url['user'], $url['pass']);
-
-    // 検索条件を取得
-    $get = $_GET;
-
-    //IDおよびユーザー名の入力有無を確認
-    if(!empty($get)){
-
-        //SQL文を実行して、結果を$stmtに代入する。
-        $stmt = $pdo->query(
-            "SELECT *
-            FROM public.enquete
-            WHERE name LIKE  '%".$_GET["name"]."%'
-            OR age='".$_GET["age"] ."'
-            OR gender='".$_GET["gender"] ."'
-            OR address LIKE  '%".$_GET["address"]."%'
-            OR telephone LIKE  '%".$_GET["telephone"]."%'
-            OR mail LIKE  '%".$_GET["mail"]."%'
-            OR thoughts='".$_GET["thoughts"] ."'
-            ");
-        }
-    ?>
-            <?php foreach ($stmt as $data): ?>
-                <tr>
-                    <td><?php echo $data[0]?></td>
-                    <td><?php echo $data[1]?></td>
-                    <?php if($data[2] === "man"): ?>
-                        <td><?php echo "男性"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[2] === "woman"): ?>
-                        <td><?php echo "女性"?></td>
-                    <?PHP endif; ?>
-                    <td><?php echo $data[3]?></td>
-                    <td><?php echo $data[4]?></td>
-                    <td><?php echo $data[5]?></td>
-                    <?php if($data[6] === "good"): ?>
-                        <td><?php echo "良い"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[6] === "nomal"): ?>
-                        <td><?php echo "普通"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[6] === "bad"): ?>
-                        <td><?php echo "悪い"?></td>
-                    <?PHP endif; ?>
-                </tr>
-            <?php endforeach; ?>
 </body>
 </html>
