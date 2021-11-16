@@ -117,54 +117,26 @@ function goIndex(){
 
     if(!empty($get)){
     // 名前の条件が指定されたら
-    if (empty($NAME) === false) {
-        if(strpos($data[0], $NAME) === false){
-            $query .= " AND name LIKE '%%' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    if ($NAME) {
+        $query .= " AND name LIKE '%%' ";
     // 年齢〃
-    }else if (empty($AGE) === false) {
-        if($data[1] !== $AGE){
-            $query .= " AND age='' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($AGE) {
+        $query .= " AND age='' ";
     // 性別〃
-    }else if (empty($GENDER) === false) {
-        if($data[2] !== $GENDER){
-            $query .= " AND gender='' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($GENDER) {
+        $query .= " AND gender='' ";
     // 住所〃
-    }else if (empty($ADDRESS) === false) {
-        if(strpos($data[3], $ADDRESS) === false){
-            $query .= " AND address LIKE '%%' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($ADDRESS) {
+        $query .= " AND address LIKE '%%' ";
     // 電話番号〃
-    }else if (empty($TELEPHONE) === false) {
-        if(strpos($data[4], $TELEPHONE) === false){
-            $query .= " AND telephone LIKE '%%' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($TELEPHONE) {
+        $query .= " AND telephone LIKE '%%' ";
     // メールアドレス〃
-    }else if (empty($MAIL) === false) {
-        if(strpos($data[5], $MAIL) === false){
-            $query .= " AND mail LIKE '%%' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($MAIL) {
+        $query .= " AND mail LIKE '%%' ";
     // 感想〃
-    }else if (empty($THOUGHTS) === false) {
-        if($data[6] !== $THOUGHTS){
-            $query .= " AND thoughts='' ";
-            //表示用フラグをfalseに
-            $flag = false;
-        }
+    }else if ($THOUGHTS) {
+        $query .= " AND thoughts='' ";
     }
 
     $stmt = $pdo->query($query);
