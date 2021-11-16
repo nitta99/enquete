@@ -93,6 +93,18 @@ function goIndex(){
         </form>
     </div>
     <?php
+    if (isset($_GET['search'])) {
+        echo '<table class="result">
+            <tr>
+                <th>氏名</th>
+                <th>年齢</th>
+                <th>性別</th>
+                <th>住所</th>
+                <th>電話番号</th>
+                <th>メールアドレス</th>
+                <th>感想</th>
+            </tr>';
+    }
     $url = parse_url(getenv('DATABASE_URL'));
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
     $pdo = new PDO($dsn, $url['user'], $url['pass']);
@@ -115,18 +127,6 @@ function goIndex(){
             OR mail LIKE  '%".$_GET["mail"]."%'
             OR thoughts='".$_GET["thoughts"] ."'
             ");
-
-        if (isset($_GET['search'])) {
-            echo '<table class="result">
-                <tr>
-                    <th>氏名</th>
-                    <th>年齢</th>
-                    <th>性別</th>
-                    <th>住所</th>
-                    <th>電話番号</th>
-                    <th>メールアドレス</th>
-                    <th>感想</th>
-                </tr>';
 
             foreach ($stmt as $data) {
                 //データ表示
@@ -152,8 +152,8 @@ function goIndex(){
             }
             // テーブルの閉じタグ
             echo '</table>';
-        }
     }
+
     ?>
 </body>
 </html>
