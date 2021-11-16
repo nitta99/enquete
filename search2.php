@@ -130,8 +130,6 @@ function goIndex(){
                     <th>感想</th>
                 </tr>';
 
-
-            if($flag === True){
             foreach ($stmt as $data) {
                 //データ表示
                 echo '<tr>';
@@ -156,7 +154,6 @@ function goIndex(){
             }
             // テーブルの閉じタグ
             echo '</table>';
-            }
         }
     }
     ?>
