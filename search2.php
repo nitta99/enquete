@@ -110,7 +110,7 @@ function goIndex(){
     $query = "SELECT * FROM public.enquete WHERE 1 = 1";
 
     // 名前の条件が指定されたら
-    if (empty($NAME) === false) {
+    if ($NAME) {
         $query .= " AND name LIKE '%%' ";
     // 年齢〃
     }else if (empty($AGE) === false) {
