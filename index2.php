@@ -24,11 +24,11 @@ function checkName(){
 }
 //文字数チェック
 function wordCheck() {
-    var getName = document.enquete.name.value;
-    var getAge = document.enquete.age.value;
-    var getAddress = document.enquete.address.value;
-    var getTelephone = document.enquete.telephone.value;
-    var getMail = document.enquete.mail.value;
+    getName = document.enquete.name.value;
+    getAge = document.enquete.age.value;
+    getAddress = document.enquete.address.value;
+    getTelephone = document.enquete.telephone.value;
+    getMail = document.enquete.mail.value;
     if (getName.length > 5) {
         alert("名前の文字数が制限をこえています");
     }else if(getAge.length > 5){
