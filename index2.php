@@ -21,7 +21,6 @@ function checkName(){
 	else{
 		return true; // 送信を実行
 	}
-
      //テキストエリアの値を取得。
     txt = document.enquete.name.value;
     //文字数を取得。
