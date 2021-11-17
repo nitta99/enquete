@@ -10,13 +10,18 @@
 function goIndex(){
     location.href="index2.php";
 }
+function data(){
+if ($query == 0){
+        alert("データは0件です");
+    }
+}
 </script>
 
 </head>
 <body>
     <table class="table-navi">
         <tr>
-            <td><button class="navigation" type="button" onclick="goIndex()">登録画面</button></td>
+            <td><button class="navigation" type="button" onclick="goIndex() && data()">登録画面</button></td>
             <td>/</td>
             <th style="font-size : 20px;">検索画面</th>
         </tr>
@@ -156,11 +161,6 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
-            <?php if($query == null): ?>
-                <tr>
-                <?php echo 'データは0件です'?>
-                </tr>
-            <?php endif; ?>
             <?php foreach ($stmt as $data): ?>
                 <tr>
                     <td><?php echo $data[0]?></td>
