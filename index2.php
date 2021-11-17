@@ -29,40 +29,24 @@ function wordCheck() {
     getAddress = document.enquete.address.value;
     getTelephone = document.enquete.telephone.value;
     getMail = document.enquete.mail.value;
-    if (getName.length > 5 || getAge.length > 5 || getAddress.length > 5 || getTelephone.length > 12 || getMail.length > 5) {
-        alert("文字数が制限をこえています");
+    if (getName.length > 5) {
+        alert("名前の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAge.length > 5){
+        alert("年齢の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAddress.length > 5){
+        alert("住所の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getTelephone.length > 12){
+        alert("電話番号の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getMail.length > 5){
+        alert("メールアドレスの文字数が制限をこえています");
         return false; // 送信を中止
     }else{
 		return true; // 送信を実行
 	}
-
-    // if(getAge.length > 5){
-    //     alert("年齢の文字数が制限をこえています");
-    //     return false; // 送信を中止
-    // }else{
-	// 	return true; // 送信を実行
-	// }
-
-    // if(getAddress.length > 5){
-    //     alert("住所の文字数が制限をこえています");
-    //     return false; // 送信を中止
-    // }else{
-	// 	return true; // 送信を実行
-	// }
-
-    // if(getTelephone.length > 12){
-    //     alert("電話番号の文字数が制限をこえています");
-    //     return false; // 送信を中止
-    // }else{
-	// 	return true; // 送信を実行
-	// }
-
-    // if(getMail.length > 5){
-    //     alert("メールアドレスの文字数が制限をこえています");
-    //     return false; // 送信を中止
-    // }else{
-	// 	return true; // 送信を実行
-	// }
 }
 //年齢数値チェック
 function checkNumber(){
