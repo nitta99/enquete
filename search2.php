@@ -63,7 +63,7 @@ function goIndex(){
                 <tr>
                     <th class="search-item">メ―ルアドレス</th>
                     <td class="search-body">
-                        <input type="text" name="mail" class="search-text" value="">
+                        <input type="text" name="email" class="search-text" value="">
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +103,7 @@ function goIndex(){
     $GENDER = $_GET['gender'];
     $ADDRESS = $_GET['address'];
     $TELEPHONE = $_GET['telephone'];
-    $MAIL = $_GET['mail'];
+    $EMAIL = $_GET['email'];
     $THOUGHTS = $_GET['thoughts'];
 
     // 基本検索条件（全件検索）
@@ -134,8 +134,8 @@ function goIndex(){
         $query .= sprintf(" AND telephone LIKE '%s' ", "%${TELEPHONE}%");
     }
     // メールアドレス　　〃
-    if ($MAIL) {
-        $query .= sprintf(" AND mail LIKE '%s' ", "%${MAIL}%");
+    if ($EMAIL) {
+        $query .= sprintf(" AND email LIKE '%s' ", "%${EMAIL}%");
     }
     // 感想　　〃
     if ($THOUGHTS) {
