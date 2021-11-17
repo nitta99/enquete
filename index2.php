@@ -21,6 +21,13 @@ function checkName(){
 	else{
 		return true; // 送信を実行
 	}
+
+     //テキストエリアの値を取得。
+    txt = document.enquete.name.value;
+    //文字数を取得。
+    n = txt.length;
+    //制限文字数以上だった場合、アラートを実行。
+    if (n > 10) alert("10文字以内で入力してください");
 }
 //年齢数値チェック
 function checkNumber(){
