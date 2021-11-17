@@ -156,11 +156,6 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
-            <?php if(!$stmt): ?>
-                <tr>
-                    <td><?php echo "データは0件です"?></td>
-                </tr>
-            <?PHP endif; ?>
             <?php foreach ($stmt as $data): ?>
                 <tr>
                     <td><?php echo $data[0]?></td>
