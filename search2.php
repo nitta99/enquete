@@ -10,11 +10,6 @@
 function goIndex(){
     location.href="index2.php";
 }
-function data(){
-if ($query == 0){
-        alert("データは0件です");
-    }
-}
 </script>
 
 </head>
@@ -161,6 +156,11 @@ if ($query == 0){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
+            <?php if(!$stmt): ?>
+                <tr>
+                    <td><?php echo "データは0件です"?></td>
+                </tr>
+            <?PHP endif; ?>
             <?php foreach ($stmt as $data): ?>
                 <tr>
                     <td><?php echo $data[0]?></td>
