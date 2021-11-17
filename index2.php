@@ -21,12 +21,25 @@ function checkName(){
 	else{
 		return true; // 送信を実行
 	}
-     //テキストエリアの値を取得。
-    txt = document.enquete.name.value;
-    //文字数を取得。
-    n = txt.length;
-    //制限文字数以上だった場合、アラートを実行。
-    if (n > 10) alert("10文字以内で入力してください");
+}
+//文字数チェック
+function wordCheck() {
+    var getName = document.enquete.name.value;
+    var getAge = document.enquete.age.value;
+    var getAddress = document.enquete.address.value;
+    var getTelephone = document.enquete.telephone.value;
+    var getMail = document.enquete.mail.value;
+    if (getName.length > 5) {
+        alert("名前の文字数が制限をこえています");
+    }else if(getAge.length > 5){
+        alert("年齢の文字数が制限をこえています");
+    }else if(getAddress.length > 5){
+        alert("住所の文字数が制限をこえています");
+    }else if(getTelephone.length > 12){
+        alert("電話番号の文字数が制限をこえています");
+    }else if(getMail.length > 5){
+        alert("メールアドレスの文字数が制限をこえています");
+    }
 }
 //年齢数値チェック
 function checkNumber(){
@@ -79,7 +92,8 @@ function goSearch(){
     <hr/>
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
-        <form action="result2.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber() && checkTelephone())">
+        <form action="result2.php" method="post" name='enquete'
+            onSubmit="return (checkName() && wordCheck() && checkNumber() && checkTelephone())">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
