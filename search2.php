@@ -156,7 +156,7 @@ function goIndex(){
                 <th>メールアドレス</th>
                 <th>感想</th>
             </tr>
-            <?php if (empty($query)): ?>
+            <?php if($query == null): ?>
                 <tr>
                 <?php echo 'データは0件です'?>
                 </tr>
