@@ -112,6 +112,10 @@ function goIndex(){
     // 検索条件を取得
     $get = $_GET;
 
+    if($query == null){
+        $count = "データは0件です";
+    }
+
     if(!empty($get)){
     // 名前の条件が指定されたら
     if ($NAME) {
@@ -155,6 +159,9 @@ function goIndex(){
                 <th>電話番号</th>
                 <th>メールアドレス</th>
                 <th>感想</th>
+            </tr>
+            <tr>
+                <td><?php echo $count?></td>
             </tr>
             <?php foreach ($stmt as $data): ?>
                 <tr>
