@@ -214,7 +214,8 @@ table.result tr:nth-child(even) {
 }
 .noNumber {
     font-weight:bold;
-    font-size: 40px;
-    text-align:center;
-    padding:20px 0;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
