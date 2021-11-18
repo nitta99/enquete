@@ -25,12 +25,18 @@ function checkName(){
 //年齢数値チェック
 function checkNumber(){
     var flag = 0;
+    var flag2 = 0;
     // 設定開始（チェックする項目を設定してください）
-    if(document.enquete.age.value.match(/[^0-9]+/)){
-        flag = 1;
+    if(document.enquete.name.value == ""){ // 「年齢」の入力をチェック
+		flag = 1;
+	}else if(document.enquete.age.value.match(/[^0-9]+/)){
+        flag2 = 1;
     }
     // 設定終了
-    if(flag){
+	if(flag){
+		window.alert('年齢は必須です'); // 入力漏れがあれば警告ダイアログを表示
+		return false; // 送信を中止
+	}else if(flag2){
         window.alert('年齢は半角数字で入力してください'); // 数字以外が入力された場合は警告ダイアログを表示
         return false; // 送信を中止
     }else{
