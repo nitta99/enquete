@@ -97,8 +97,6 @@ function goSearch(){
                         $THOUGHTS = "普通";
                     }else if($THOUGHTS === "bad"){
                         $THOUGHTS = "悪い";
-                    }else if($THOUGHTS === ""){
-                        $THOUGHTS = "";
                     }
                     echo htmlspecialchars(@$THOUGHTS, ENT_QUOTES, 'UTF-8');
                     ?>
