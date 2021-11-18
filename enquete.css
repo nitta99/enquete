@@ -212,3 +212,9 @@ table.result tr:nth-child(even) {
     position: relative;
     left: 30px;
 }
+.noNumber {
+    font-weight:bold;
+    font-size: 40px;
+    text-align:center;
+    padding:20px 0;
+}
