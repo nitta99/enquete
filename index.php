@@ -100,7 +100,7 @@ function checkMail(){
 function checkThoughts(){
 	var flag = 0;
 	// 設定開始（必須にする項目を設定してください）
-	if(document.enquete.thoughts.checked){ // 「感想」の入力をチェック
+	if(!document.enquete.thoughts.checked){ // 「感想」の入力をチェック
 		flag = 1;
 	}
 	// 設定終了
