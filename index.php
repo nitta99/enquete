@@ -188,6 +188,9 @@ function goSearch(){
                         <input type="radio" name="thoughts" value="bad" />
                         <span class="contact-thoughts-txt">悪い</span>
                     </label>
+                    <label class="search-thoughts">
+                        <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
+                    </label>
                     </td>
                 </tr>
                 </table>
