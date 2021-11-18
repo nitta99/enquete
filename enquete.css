@@ -208,5 +208,6 @@ table.result tr:nth-child(even) {
 }
 .countNumber {
     font-weight:bold;
+    position: relative;
     left: 100px;
 }
