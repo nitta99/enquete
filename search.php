@@ -145,14 +145,11 @@ function goIndex(){
     $stmt = $pdo->query($query);
     }
     ?>
-    <tr>
-        <td>検索結果 <?php echo $stmt->rowCount() ?> 件</td>
-    </tr>
-    <table class="result">
-        <?php if (isset($_GET['search'])): ?>
-            <tr>
-            <td><?php echo $stmt->rowCount() ?>件</td>
-            </tr>
+    <?php if (isset($_GET['search'])): ?>
+        <tr>
+            <td>検索結果 <?php echo $stmt->rowCount() ?> 件</td>
+        </tr>
+        <table class="result">
             <tr>
                 <th>氏名</th>
                 <th>年齢</th>
@@ -186,7 +183,7 @@ function goIndex(){
                     <?PHP endif; ?>
                 </tr>
             <?php endforeach; ?>
-        <?php endif; ?>
-    </table>
+        </table>
+    <?php endif; ?>
 </body>
 </html>
