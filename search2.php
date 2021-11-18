@@ -148,6 +148,9 @@ function goIndex(){
     <table class="result">
         <?php if (isset($_GET['search'])): ?>
             <tr>
+            <td><?php echo $stmt->rowCount() ?>件</td>
+            </tr>
+            <tr>
                 <th>氏名</th>
                 <th>年齢</th>
                 <th>性別</th>
