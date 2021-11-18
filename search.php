@@ -145,15 +145,13 @@ function goIndex(){
     $stmt = $pdo->query($query);
     }
     ?>
-    <div class="noNumber">
-    <table>
+    <table class="noNumber">
     <?php if ($stmt->rowCount() == 0): ?>
         <tr>
             <td><?php echo "条件に一致するデータはありません"?></td>
         </tr>
     <?PHP endif; ?>
     </table>
-    </div>
     <?php if ($stmt->rowCount() >= 1): ?>
         <?php if (isset($_GET['search'])): ?>
             <table class="countNumber">
