@@ -210,5 +210,4 @@ table.result tr:nth-child(even) {
     font-weight:bold;
     font-size: 20px;
     position: relative;
-    left: 25px;
 }
