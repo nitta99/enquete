@@ -146,10 +146,12 @@ function goIndex(){
     }
     ?>
     <?php if (isset($_GET['search'])): ?>
+        <table>
+        <tr>
+            <td class="countNumber">検索結果 <?php echo $stmt->rowCount() ?> 件</td>
+        </tr>
+        </table>
         <table class="result">
-            <tr>
-                <td class="countNumber">検索結果 <?php echo $stmt->rowCount() ?> 件</td>
-            </tr>
             <tr>
                 <th>氏名</th>
                 <th>年齢</th>
