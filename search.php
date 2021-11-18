@@ -145,6 +145,9 @@ function goIndex(){
     $stmt = $pdo->query($query);
     }
     ?>
+    <tr>
+        <td>検索結果 <?php echo $stmt->rowCount() ?> 件</td>
+    </tr>
     <table class="result">
         <?php if (isset($_GET['search'])): ?>
             <tr>
