@@ -147,7 +147,7 @@ function goIndex(){
     ?>
     <?php if (isset($_GET['search'])): ?>
         <tr>
-            <td>検索結果 <?php echo $stmt->rowCount() ?> 件</td>
+            <td class="countNumber">検索結果 <?php echo $stmt->rowCount() ?> 件</td>
         </tr>
         <table class="result">
             <tr>
