@@ -81,21 +81,6 @@ function checkTelephone(){
 		return true; // 送信を実行
 	}
 }
-//メールアドレスチェック
-function checkMail(){
-    var flag = 0;
-    // 設定開始（チェックする項目を設定してください）
-    if(!document.enquete.mail.value.match(/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/)){
-        flag = 1;
-    }
-    // 設定終了
-    if(flag){
-        window.alert('メールアドレスは半角英数字記号で入力してください'); // 半角英数字記号以外が入力された場合は警告ダイアログを表示
-        return false; // 送信を中止
-    }else{
-       return true; // 送信を実行
-    }
-}
 //感想入力チェック
 function checkThoughts(){
 	var flag = 0;
@@ -111,6 +96,21 @@ function checkThoughts(){
 	else{
 		return true; // 送信を実行
 	}
+}
+//メールアドレスチェック
+function checkMail(){
+    var flag = 0;
+    // 設定開始（チェックする項目を設定してください）
+    if(!document.enquete.mail.value.match(/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/)){
+        flag = 1;
+    }
+    // 設定終了
+    if(flag){
+        window.alert('メールアドレスは半角英数字記号で入力してください'); // 半角英数字記号以外が入力された場合は警告ダイアログを表示
+        return false; // 送信を中止
+    }else{
+       return true; // 送信を実行
+    }
 }
 //指定ページ遷移
 function goSearch(){
