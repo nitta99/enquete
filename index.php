@@ -22,6 +22,32 @@ function checkName(){
 		return true; // 送信を実行
 	}
 }
+//文字数チェック
+function wordCheck() {
+    getName = document.enquete.name.value;
+    getAge = document.enquete.age.value;
+    getAddress = document.enquete.address.value;
+    getTelephone = document.enquete.telephone.value;
+    getMail = document.enquete.mail.value;
+    if (getName.length > 255) {
+        alert("名前の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAge.length > 999){
+        alert("年齢の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAddress.length > 255){
+        alert("住所の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getTelephone.length > 12){
+        alert("電話番号の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getMail.length > 255){
+        alert("メールアドレスの文字数が制限をこえています");
+        return false; // 送信を中止
+    }else{
+		return true; // 送信を実行
+	}
+}
 //年齢数値チェック
 function checkNumber(){
     var flag = 0;
@@ -55,9 +81,24 @@ function checkTelephone(){
 		return true; // 送信を実行
 	}
 }
+//メールアドレスチェック
+function checkMail(){
+    var flag = 0;
+    // 設定開始（チェックする項目を設定してください）
+    if(document.enquete.age.value.match(/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/)){
+        flag = 1;
+    }
+    // 設定終了
+    if(flag){
+        window.alert('メールアドレスは半角英数字記号で入力してください'); // 数字以外が入力された場合は警告ダイアログを表示
+        return false; // 送信を中止
+    }else{
+       return true; // 送信を実行
+    }
+}
 //指定ページ遷移
 function goSearch(){
-    location.href="search.php";
+    location.href="search2.php";
 }
 </script>
 
@@ -73,7 +114,8 @@ function goSearch(){
     <hr/>
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
-        <form action="result.php" method="post" name='enquete' onSubmit="return (checkName() && checkNumber() && checkTelephone())">
+        <form action="result2.php" method="post" name='enquete'
+            onSubmit="return (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail())">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
