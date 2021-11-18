@@ -8,7 +8,7 @@
 <script type="text/javascript">
 //指定ページ遷移
 function goIndex(){
-    location.href="index2.php";
+    location.href="index.php";
 }
 </script>
 
@@ -24,7 +24,7 @@ function goIndex(){
     <hr/>
     <div class ="search">
     <h1 class="search-ttl">検索</h1>
-        <form action="search2.php" method="get">
+        <form action="search.php" method="get">
             <table class="search-table">
                 <tr>
                     <th class="search-item">名前</th>

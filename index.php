@@ -98,7 +98,7 @@ function checkMail(){
 }
 //指定ページ遷移
 function goSearch(){
-    location.href="search2.php";
+    location.href="search.php";
 }
 </script>
 
@@ -114,7 +114,7 @@ function goSearch(){
     <hr/>
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
-        <form action="result2.php" method="post" name='enquete'
+        <form action="result.php" method="post" name='enquete'
             onSubmit="return (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail())">
             <table class="contact-table">
                 <tr>

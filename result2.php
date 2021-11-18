@@ -30,10 +30,10 @@ fclose($fp);
 <script type="text/javascript">
 //指定ページ遷移
 function goIndex(){
-    location.href="index.php";
+    location.href="index2.php";
 }
 function goSearch(){
-    location.href="search.php";
+    location.href="search2.php";
 }
 </script>
 

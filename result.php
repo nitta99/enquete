@@ -24,10 +24,10 @@
 <script type="text/javascript">
 //指定ページ遷移
 function goIndex(){
-    location.href="index2.php";
+    location.href="index.php";
 }
 function goSearch(){
-    location.href="search2.php";
+    location.href="search.php";
 }
 </script>
 
