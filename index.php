@@ -100,7 +100,7 @@ function checkMail(){
 function checkThoughts(){
 	var flag = 0;
 	// 設定開始（必須にする項目を設定してください）
-	if(document.enquete.thoughts.value == ""){ // 「感想」の入力をチェック
+	if(document.enquete.thoughts.checked){ // 「感想」の入力をチェック
 		flag = 1;
 	}
 	// 設定終了
@@ -187,9 +187,6 @@ function goSearch(){
                     <label class="contact-thoughts">
                         <input type="radio" name="thoughts" value="bad" />
                         <span class="contact-thoughts-txt">悪い</span>
-                    </label>
-                    <label class="search-thoughts">
-                        <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
                     </label>
                     </td>
                 </tr>
