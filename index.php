@@ -63,6 +63,22 @@ function checkNumber(){
        return true; // 送信を実行
     }
 }
+//住所入力チェック
+function checkAddres(){
+	var flag = 0;
+	// 設定開始（必須にする項目を設定してください）
+	if(document.enquete.address.value == ""){ // 「住所」の入力をチェック
+		flag = 1;
+	}
+	// 設定終了
+	if(flag){
+		window.alert('住所は必須です'); // 入力漏れがあれば警告ダイアログを表示
+		return false; // 送信を中止
+	}
+	else{
+		return true; // 送信を実行
+	}
+}
 //電話番号入力数値チェック
 function checkTelephone(){
 	var flag = 0;
@@ -131,7 +147,8 @@ function goSearch(){
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
         <form action="result.php" method="post" name='enquete'
-            onSubmit="return (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail() && checkThoughts())">
+            onSubmit="return
+            (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail() && checkThoughts() && checkAddres())">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
