@@ -148,49 +148,49 @@ function goIndex(){
     <?php if ($stmt->rowCount() == 0): ?>
         <?php echo "条件に一致するデータはありません"?>
     <?PHP endif; ?>
-    <?php if (isset($_GET['search'])): ?>
-        <table class="countNumber">
-        <?php if ($stmt->rowCount() >= 1): ?>
-        <tr>
-            <td>検索結果 <?php echo $stmt->rowCount()?> 件</td>
-        </tr>
-        <?PHP endif; ?>
-        </table>
-        <table class="result">
-            <tr>
-                <th>氏名</th>
-                <th>年齢</th>
-                <th>性別</th>
-                <th>住所</th>
-                <th>電話番号</th>
-                <th>メールアドレス</th>
-                <th>感想</th>
-            </tr>
-            <?php foreach ($stmt as $data): ?>
+    <?php if ($stmt->rowCount() >= 1): ?>
+        <?php if (isset($_GET['search'])): ?>
+            <table class="countNumber">
                 <tr>
-                    <td><?php echo $data[0]?></td>
-                    <td><?php echo $data[1]?></td>
-                    <?php if($data[2] === "man"): ?>
-                        <td><?php echo "男性"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[2] === "woman"): ?>
-                        <td><?php echo "女性"?></td>
-                    <?PHP endif; ?>
-                    <td><?php echo $data[3]?></td>
-                    <td><?php echo $data[4]?></td>
-                    <td><?php echo $data[5]?></td>
-                    <?php if($data[6] === "good"): ?>
-                        <td><?php echo "良い"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[6] === "normal"): ?>
-                        <td><?php echo "普通"?></td>
-                    <?PHP endif; ?>
-                    <?php if($data[6] === "bad"): ?>
-                        <td><?php echo "悪い"?></td>
-                    <?PHP endif; ?>
+                    <td>検索結果 <?php echo $stmt->rowCount()?> 件</td>
                 </tr>
-            <?php endforeach; ?>
-        </table>
-    <?php endif; ?>
+            </table>
+            <table class="result">
+                <tr>
+                    <th>氏名</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>住所</th>
+                    <th>電話番号</th>
+                    <th>メールアドレス</th>
+                    <th>感想</th>
+                </tr>
+                <?php foreach ($stmt as $data): ?>
+                    <tr>
+                        <td><?php echo $data[0]?></td>
+                        <td><?php echo $data[1]?></td>
+                        <?php if($data[2] === "man"): ?>
+                            <td><?php echo "男性"?></td>
+                        <?PHP endif; ?>
+                        <?php if($data[2] === "woman"): ?>
+                            <td><?php echo "女性"?></td>
+                        <?PHP endif; ?>
+                        <td><?php echo $data[3]?></td>
+                        <td><?php echo $data[4]?></td>
+                        <td><?php echo $data[5]?></td>
+                        <?php if($data[6] === "good"): ?>
+                            <td><?php echo "良い"?></td>
+                        <?PHP endif; ?>
+                        <?php if($data[6] === "normal"): ?>
+                            <td><?php echo "普通"?></td>
+                        <?PHP endif; ?>
+                        <?php if($data[6] === "bad"): ?>
+                            <td><?php echo "悪い"?></td>
+                        <?PHP endif; ?>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+    <?PHP endif; ?>
 </body>
 </html>
