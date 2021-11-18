@@ -57,7 +57,7 @@ function checkNumber(){
     }
     // 設定終了
     if(flag){
-        window.alert('年齢は数字で入力してください'); // 数字以外が入力された場合は警告ダイアログを表示
+        window.alert('年齢は半角数字で入力してください'); // 数字以外が入力された場合は警告ダイアログを表示
         return false; // 送信を中止
     }else{
        return true; // 送信を実行
@@ -147,8 +147,7 @@ function goSearch(){
     <div class ="contact">
     <h1 class="contact-ttl">アンケート</h1>
         <form action="result.php" method="post" name='enquete'
-            onSubmit="
-            return (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail() && checkThoughts() && checkAddres())">
+            onSubmit="return (checkName() && wordCheck() && checkNumber() && checkTelephone() && checkMail() && checkThoughts() && checkAddres())">
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
