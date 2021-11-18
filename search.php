@@ -147,7 +147,9 @@ function goIndex(){
     ?>
     <table class="noNumber">
     <?php if ($stmt->rowCount() == 0): ?>
-        <?php echo "条件に一致するデータはありません"?>
+        <tr>
+            <td><?php echo "条件に一致するデータはありません"?></td>
+        </tr>
     <?PHP endif; ?>
     </table>
     <?php if ($stmt->rowCount() >= 1): ?>
