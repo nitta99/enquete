@@ -1,18 +1,24 @@
 <?php
-    $url = parse_url(getenv('DATABASE_URL'));
-    $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
-    $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-    $NAME = $_POST['name'];
-    $AGE = $_POST['age'];
-    $GENDER = $_POST['gender'];
-    $ADDRESS = $_POST['address'];
-    $TELEPHONE = $_POST['telephone'];
-    $MAIL = $_POST['mail'];
-    $THOUGHTS = $_POST['thoughts'];
+// 書き込み対象のCSVファイルを開く
+$fp = fopen("data.csv", "a");
 
-    $sql = "INSERT INTO public.enquete VALUES ('$NAME', '$AGE', '$GENDER', '$ADDRESS', '$TELEPHONE', '$MAIL', '$THOUGHTS');";
-    $pdo->exec ($sql);
+$NAME = $_POST['name'];
+$AGE = $_POST['age'];
+$GENDER = $_POST['gender'];
+$ADDRESS = $_POST['address'];
+$TELEPHONE = $_POST['telephone'];
+$MAIL = $_POST['mail'];
+$THOUGHTS = $_POST['thoughts'];
+
+//ストリームフィルタ指定
+stream_filter_prepend($fp,'convert.iconv.utf-8/cp932');
+
+// CSVファイルに書き込む
+fwrite($fp,"$NAME,$AGE,$GENDER,$ADDRESS,$TELEPHONE,$MAIL,$THOUGHTS"."\n");
+
+// 書き込み対象のファイルをクローズ
+fclose($fp);
 ?>
 <!doctype html>
 <html>
@@ -24,10 +30,10 @@
 <script type="text/javascript">
 //指定ページ遷移
 function goIndex(){
-    location.href="index2.php";
+    location.href="index.php";
 }
 function goSearch(){
-    location.href="search2.php";
+    location.href="search.php";
 }
 </script>
 
