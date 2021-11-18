@@ -85,7 +85,7 @@ function checkTelephone(){
 function checkMail(){
     var flag = 0;
     // 設定開始（チェックする項目を設定してください）
-    if(document.enquete.age.value.match(/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/)){
+    if(document.enquete.mail.value.match(/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/)){
         flag = 1;
     }
     // 設定終了
