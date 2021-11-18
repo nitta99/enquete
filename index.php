@@ -28,7 +28,8 @@ function checkNumber(){
     // 設定開始（必須にする項目を設定してください）
 	if(document.enquete.telephone.value == ""){ // 「年齢」の入力をチェック
 		flag = 1;
-	}else if(document.enquete.age.value.match(/[^0-9]+/)){
+	}
+    if(document.enquete.age.value.match(/[^0-9]+/)){
         flag = 1;
     }
     // 設定終了
