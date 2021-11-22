@@ -14,84 +14,82 @@ function goIndex(){
 
 </head>
 <body>
-    <table class="table-navi">
-        <tr>
-            <td><button class="navigation" type="button" onclick="goIndex() && data()">登録画面</button></td>
-            <td>/</td>
-            <th style="font-size : 20px;">検索画面</th>
-        </tr>
-    </table>
-    <hr/>
-    <div class ="search">
-    <h1 class="search-ttl">検索</h1>
-        <form action="search.php" method="get">
-            <table class="search-table">
-                <tr>
-                    <th class="search-item">名前</th>
-                    <td class="search-body">
-                        <input type="text" name="name" class="search-text" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">年齢</th>
-                    <td class="search-body">
-                        <input type="text" name="age" class="search-age-text" value="">歳
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">性別</th>
-                    <td class="search-body">
-                        <select name="gender" class="search-select">
-                            <option value="" hidden>選択してください</option>
-                            <option value="man">男性</option>
-                            <option value="woman">女性</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">住所</th>
-                    <td class="search-body">
-                        <input type="text" name="address" class="search-text" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">電話番号</th>
-                    <td class="search-body">
-                        <input type="text" name="telephone" class="search-text" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">メ―ルアドレス</th>
-                    <td class="search-body">
-                        <input type="text" name="email" class="search-text" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="search-item">感想</th>
-                    <td class="search-body">
-                    <label class="search-thoughts">
-                        <input type="radio" name="thoughts" value="good" />
-                        <span class="search-thoughts-txt">良い</span>
-                    </label>
-                    <label class="search-thoughts">
-                        <input type="radio" name="thoughts" value="normal" />
-                        <span class="search-thoughts-txt">普通</span>
-                    </label>
-                    <label class="search-thoughts">
-                        <input type="radio" name="thoughts" value="bad" />
-                        <span class="search-thoughts-txt">悪い</span>
-                    </label>
-                    <label class="search-thoughts">
-                        <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
-                    </label>
-                    </td>
-                </tr>
-            </table>
-                <tr>
-                    <td><input class="contact-submit" type="submit" name="search" value="検索" /></td>
-                </tr>
-        </form>
-    </div>
+    <form action="search.php" method="get">
+        <table class="table-navi">
+            <tr>
+                <td><button class="navigation" type="button" onclick="goIndex() && data()">登録画面</button></td>
+                <td>/</td>
+                <th style="font-size : 20px;">検索画面</th>
+            </tr>
+        </table>
+        <div class ="search">
+            <h1 class="search-ttl">検索</h1>
+                <table class="search-table">
+                    <tr>
+                        <th class="search-item">名前</th>
+                        <td class="search-body">
+                            <input type="text" name="name" class="search-text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">年齢</th>
+                        <td class="search-body">
+                            <input type="text" name="age" class="search-age-text" value="">歳
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">性別</th>
+                        <td class="search-body">
+                            <select name="gender" class="search-select">
+                                <option value="" hidden>選択してください</option>
+                                <option value="man">男性</option>
+                                <option value="woman">女性</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">住所</th>
+                        <td class="search-body">
+                            <input type="text" name="address" class="search-text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">電話番号</th>
+                        <td class="search-body">
+                            <input type="text" name="telephone" class="search-text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">メ―ルアドレス</th>
+                        <td class="search-body">
+                            <input type="text" name="email" class="search-text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="search-item">感想</th>
+                        <td class="search-body">
+                        <label class="search-thoughts">
+                            <input type="radio" name="thoughts" value="good" />
+                            <span class="search-thoughts-txt">良い</span>
+                        </label>
+                        <label class="search-thoughts">
+                            <input type="radio" name="thoughts" value="normal" />
+                            <span class="search-thoughts-txt">普通</span>
+                        </label>
+                        <label class="search-thoughts">
+                            <input type="radio" name="thoughts" value="bad" />
+                            <span class="search-thoughts-txt">悪い</span>
+                        </label>
+                        <label class="search-thoughts">
+                            <input type="radio" name="thoughts" value="" checked="checked" style="display:none;"/>
+                        </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="contact-submit" type="submit" name="search" value="検索" /></td>
+                    </tr>
+                </table>
+        </div>
     <?php
 
     $url = parse_url(getenv('DATABASE_URL'));
@@ -196,5 +194,6 @@ function goIndex(){
             </table>
         <?php endif; ?>
     <?PHP endif; ?>
+    </form>
 </body>
 </html>

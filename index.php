@@ -114,7 +114,7 @@ function wordCheck() {
     if (getName.length > 255) {
         alert("名前の文字数が制限をこえています");
         return false; // 送信を中止
-    }else if(getAge.length > 999){
+    }else if(getAge.length > 3){
         alert("年齢の文字数が制限をこえています");
         return false; // 送信を中止
     }else if(getAddress.length > 255){
@@ -138,6 +138,8 @@ function goSearch(){
 
 </head>
 <body>
+<form action="result.php" method="post" name='enquete'
+    onSubmit="return (checkName() && checkNumber()  && checkAddres() && checkTelephone() && checkMail() && checkThoughts() && wordCheck())">
     <table class="table-navi">
         <tr>
             <th style="font-size : 20px;">登録画面</th>
@@ -147,9 +149,7 @@ function goSearch(){
     </table>
     <hr/>
     <div class ="contact">
-    <h1 class="contact-ttl">アンケート</h1>
-        <form action="result.php" method="post" name='enquete'
-            onSubmit="return (checkName() && checkNumber()  && checkAddres() && checkTelephone() && checkMail() && checkThoughts() && wordCheck())">
+        <h1 class="contact-ttl">アンケート</h1>
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">名前</th>
@@ -210,11 +210,11 @@ function goSearch(){
                     </label>
                     </td>
                 </tr>
-                </table>
                 <tr>
                     <td><input class="contact-submit" type="submit" value="登録" /></td>
                 </tr>
-        </form>
+            </table>
     </div>
+</form>
 </body>
 </html>
