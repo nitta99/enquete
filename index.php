@@ -211,7 +211,7 @@ function goSearch(){
                     </td>
                 </tr>
             </table>
-            <table>
+            <table class="click">
                 <tr>
                     <td><input class="contact-submit" type="submit" value="登録" /></td>
                 </tr>
