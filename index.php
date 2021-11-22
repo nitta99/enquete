@@ -210,6 +210,8 @@ function goSearch(){
                     </label>
                     </td>
                 </tr>
+            </table>
+            <table>
                 <tr>
                     <td><input class="contact-submit" type="submit" value="登録" /></td>
                 </tr>

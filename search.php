@@ -85,6 +85,8 @@ function goIndex(){
                         </label>
                         </td>
                     </tr>
+                </table>
+                <table>
                     <tr>
                         <td><input class="contact-submit" type="submit" name="search" value="検索" /></td>
                     </tr>
