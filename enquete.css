@@ -219,3 +219,6 @@ table.result tr:nth-child(even) {
     top: 40px;
     left: 600px;
 }
+.click-table{
+    margin:0 auto;
+}
