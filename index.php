@@ -6,6 +6,32 @@
 <title>アンケート</title>
 
 <script type="text/javascript">
+//文字数チェック
+function wordCheck() {
+    getName = document.enquete.name.value;
+    getAge = document.enquete.age.value;
+    getAddress = document.enquete.address.value;
+    getTelephone = document.enquete.telephone.value;
+    getMail = document.enquete.mail.value;
+    if (getName.length > 255) {
+        alert("名前の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAge.length > 3){
+        alert("年齢の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getAddress.length > 255){
+        alert("住所の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getTelephone.length > 12){
+        alert("電話番号の文字数が制限をこえています");
+        return false; // 送信を中止
+    }else if(getMail.length > 255){
+        alert("メールアドレスの文字数が制限をこえています");
+        return false; // 送信を中止
+    }else{
+		return true; // 送信を実行
+	}
+}
 //名前入力チェック
 function checkName(){
 	var flag = 0;
@@ -104,32 +130,6 @@ function checkThoughts(){
 		return true; // 送信を実行
 	}
 }
-//文字数チェック
-function wordCheck() {
-    getName = document.enquete.name.value;
-    getAge = document.enquete.age.value;
-    getAddress = document.enquete.address.value;
-    getTelephone = document.enquete.telephone.value;
-    getMail = document.enquete.mail.value;
-    if (getName.length > 255) {
-        alert("名前の文字数が制限をこえています");
-        return false; // 送信を中止
-    }else if(getAge.length > 3){
-        alert("年齢の文字数が制限をこえています");
-        return false; // 送信を中止
-    }else if(getAddress.length > 255){
-        alert("住所の文字数が制限をこえています");
-        return false; // 送信を中止
-    }else if(getTelephone.length > 12){
-        alert("電話番号の文字数が制限をこえています");
-        return false; // 送信を中止
-    }else if(getMail.length > 255){
-        alert("メールアドレスの文字数が制限をこえています");
-        return false; // 送信を中止
-    }else{
-		return true; // 送信を実行
-	}
-}
 //指定ページ遷移
 function goSearch(){
     location.href="search.php";
@@ -139,7 +139,7 @@ function goSearch(){
 </head>
 <body>
 <form action="result.php" method="post" name='enquete'
-    onSubmit="return (checkName() && checkNumber()  && checkAddres() && checkTelephone() && checkMail() && checkThoughts() && wordCheck())">
+    onSubmit="return (wordCheck() && checkName() && checkNumber()  && checkAddres() && checkTelephone() && checkMail() && checkThoughts())">
     <table class="table-navi">
         <tr>
             <th style="font-size : 20px;">登録画面</th>
